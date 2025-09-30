@@ -19,25 +19,7 @@
     <div>
       <h2>Estudis</h2>
         <ul>
-          <b><li>ESO</li></b>
-        <ol>
-          <li>IES Menendez y Pelayo</li>
-        <ol type="i">
-          <li>2019-2020</li>
-        </ol>
-          <li>IES Llucmajor</li>
-        <ol type="i">
-            <li>2020-2022</li>
-        </ol>
-          <li>IES Emili Darder</li>
-        <ol type="i">
-          <li>2022-2024</li>
-        </ol>
-        </ol>
-          <b><li>FP Grado Medio</li></b>
-        <ol>
-          <li>IES Politecnic</li>
-        </ol>
+          <li>ESO</li>
         </ul>
     </div>
 </font>
