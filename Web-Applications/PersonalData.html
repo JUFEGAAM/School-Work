@@ -1,45 +1,139 @@
 <html>
 <head>
   <title>Personal Data Form</title>
+<style>
+
+body {
+  background-color: black;
+  color: white;
+}
+
+table {
+  margin: 50px 1250 0 auto;
+  border-color: #CD432A;
+  border-collapse: collapse;
+}
+
+#salute {
+  position: absolute;
+  top: 50;
+}
+
+#aoe {
+  position: absolute;
+  top: -25px;
+  left: 1265px;
+}
+
+#title {
+  font-size: 55;
+  color: #F4CA8D;
+}
+
+label {
+  color: #F4CA8D;
+}
+
+input {
+  background-color: #CD432A;
+}
+
+input::placeholder {
+  color: #F4CA8D;
+}
+
+</style>
 <body>
-  <label>Name</label>
+      <img id="aoe" width="250" src="https://cdn2.steamgriddb.com/logo/e6a2c4d36d6a52cadca1dfeca545afb0.png"></a>
+        <h1 id="title" align="center" style="background-color: #CD432A;">Personal Data</h1>
+  <table align="center" border="2">
+    <tr>
+      <td>
+      <label>Name</label><br>
       <input type="text" max="50" placeholder="Write here">
-    <br>
-  <label>First Surname</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>First Surname</label><br>
       <input type="text" max="50" placeholder="Write here">
-    <br>
-  <label>Second Surname</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Second Surname</label><br>
       <input type="text" max="50" placeholder="Write here">
-    <br>
-  <label>Street Type</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Street Type</label><br>
       <input type="text" max="50" placeholder="Write here">
-    <br>
-  <label>Address</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Address</label><br>
       <input type="text" max="50" placeholder="Write here">
-    <br>
-  <label>Number</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Number</label><br>
       <input type="number" max="3" placeholder="Write here">
-    <br>
-  <label>Floor</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Floor</label><br>
       <input type="number" max="2" placeholder="Write here">
-    <br>
-  <label>Door</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Door</label><br>
       <input type="text" max="1" placeholder="Write here">
-    <br>
-  <label>Province</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Province</label><br>
       <input type="text" max="50" placeholder="Write here">
-    <br>
-  <label>ZIP Code</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>ZIP Code</label><br>
       <input type="number" max="5" placeholder="Write here">
-    <br>
-  <label>Phone Number</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Phone Number</label><br>
       <input type="text" max="13" placeholder="Write here">
-    <br>
-  <label>Email</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Email</label><br>
       <input type="text" max="100" placeholder="Write here">
-    <br>
-  <label>Salary</label>
-      <input type="decimal" max="1" placeholder="">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Salary</label><br>
+      <input type="number" step="0.1" placeholder="Write here">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Date of Birth</label><br>
+      <input type="date" placeholder="Write here">
+      </tr>
+    </tr>
+  </table>
+      <p>
+      <button id="salute">Salute</button>
 </body>
 </head>
 </html
