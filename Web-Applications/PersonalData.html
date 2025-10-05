@@ -9,14 +9,25 @@ body {
 }
 
 table {
-  margin: 50px 1250 0 auto;
+  margin: -15px 1250 0 auto;
   border-color: #CD432A;
   border-collapse: collapse;
 }
 
 #salute {
   position: absolute;
-  top: 50;
+  top: 300;
+  left: 400;
+  color: #CD432A;
+  background-color: #F4CA8D; 
+}
+
+#wdil {
+  position: absolute;
+  top: 350;
+  left: 400;
+  color: #CD432A;
+  background-color: #F4CA8D
 }
 
 #aoe {
@@ -42,69 +53,81 @@ input::placeholder {
   color: #F4CA8D;
 }
 
+#displaysalute {
+  position: absolute;
+  top: 300;
+  left: 455;
+}
+
+#displaywdil {
+  position: absolute;
+  top: 350;
+  left: 517;
+}
+
 </style>
 <body>
       <img id="aoe" width="250" src="https://cdn2.steamgriddb.com/logo/e6a2c4d36d6a52cadca1dfeca545afb0.png"></a>
-        <h1 id="title" align="center" style="background-color: #CD432A;">Personal Data</h1>
+        <h1 id="title" align="center" style="background-color: #CD432A; border: 2px solid #F4CA8D;">Personal Data</h1>
   <table align="center" border="2">
     <tr>
       <td>
       <label>Name</label><br>
-      <input type="text" max="50" placeholder="Write here">
+      <input id="name" type="text" max="50" placeholder="Write here">
       </td>
     </tr>
     <tr>
       <td>
       <label>First Surname</label><br>
-      <input type="text" max="50" placeholder="Write here">
+      <input id="surname1" type="text" max="50" placeholder="Write here">
       </td>
     </tr>
     <tr>
       <td>
       <label>Second Surname</label><br>
-      <input type="text" max="50" placeholder="Write here">
+      <input id="surname2" type="text" max="50" placeholder="Write here">
       </td>
     </tr>
     <tr>
       <td>
       <label>Street Type</label><br>
-      <input type="text" max="50" placeholder="Write here">
+      <input id="strtype" type="text" max="50" placeholder="Write here">
       </td>
     </tr>
     <tr>
       <td>
       <label>Address</label><br>
-      <input type="text" max="50" placeholder="Write here">
+      <input id="address" type="text" max="50" placeholder="Write here">
       </td>
     </tr>
     <tr>
       <td>
       <label>Number</label><br>
-      <input type="number" max="3" placeholder="Write here">
+      <input id="number" type="number" max="3" placeholder="Write here">
       </td>
     </tr>
     <tr>
       <td>
       <label>Floor</label><br>
-      <input type="number" max="2" placeholder="Write here">
+      <input id="floor" type="number" max="2" placeholder="Write here">
       </td>
     </tr>
     <tr>
       <td>
       <label>Door</label><br>
-      <input type="text" max="1" placeholder="Write here">
+      <input id="door" type="text" max="1" placeholder="Write here">
       </td>
     </tr>
     <tr>
       <td>
       <label>Province</label><br>
-      <input type="text" max="50" placeholder="Write here">
+      <input id="province" type="text" max="50" placeholder="Write here">
       </td>
     </tr>
     <tr>
       <td>
       <label>ZIP Code</label><br>
-      <input type="number" max="5" placeholder="Write here">
+      <input id="zip" type="number" max="5" placeholder="Write here">
       </td>
     </tr>
     <tr>
@@ -132,8 +155,44 @@ input::placeholder {
       </tr>
     </tr>
   </table>
-      <p>
       <button id="salute">Salute</button>
+      <button id="wdil">Where do i live?</button>
+      <div id="displaysalute"></div>
+      <div id="displaywdil"></div>
+
+<script>
+  let saluteButton = document.getElementById("salute");
+  
+  saluteButton.addEventListener("click", function() {
+
+    let name = document.getElementById("name").value;
+    let surname1 = document.getElementById("surname1").value;
+    let surname2 = document.getElementById("surname2").value;
+
+    let fullname = "Hello, " + name + " " + surname1 + " " + surname2;
+
+    let displaysalute = document.getElementById("displaysalute");
+    displaysalute.textContent = fullname
+});
+
+  let wdilButton = document.getElementById("wdil");
+  
+  wdilButton.addEventListener("click", function() {
+
+    let strtype = document.getElementById("strtype").value;
+    let address = document.getElementById("address").value;
+    let number = document.getElementById("number").value;
+    let floor = document.getElementById("floor").value;
+    let door = document.getElementById("door").value;
+    let province = document.getElementById("province").value;
+    let zip = document.getElementById("zip").value;
+    
+    let fulladdress = strtype + " " + address + ", " + number + ", " + floor + door + ", " + province + ", " + zip;
+
+    let displaywdil = document.getElementById("displaywdil");
+    displaywdil.textContent = fulladdress
+});
+</script
 </body>
 </head>
-</html
+</html>
