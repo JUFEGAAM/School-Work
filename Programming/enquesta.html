@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Health Form</title>
+<style>
+#title {
+  text-align: center;
+  margin: 50 0 0 0; 
+}
+</style>
+</head>
+<body>
+<form action="enquesta.html" method="GET">
+  <h1 id="title">Health Form</h1>
+      <label id="label_nom" for="nom">Nom, Cognom:</label><br>
+      <input id="nom" name="nom" value="" placeholder="e.g. Juan Felix">
+      <input id="cognom" name="cognom" value="" placeholder="e.g. Garcia"><p>
+      
+      <label id="label_coffees" for="cafes">Quants cafes beus cada dia?</label>
+      <select id="cafes" name="cafes">
+        <option value="0">Ningun</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="mes">Mes de 3</option>
+      </select><p>
+      
+      <label id="label_food">Que menjes cada dia?</label><br>
+      <div>
+        <input type="checkbox" id="fruita" name="aliments" value="fruita">
+          <label for="fruita">Fruita</label><br>
+        <input type="checkbox" id="llet" name="aliments" value="llet" checked>
+          <label for="llet">Llet</label><br>
+        <input type="checkbox" id="carn" name="aliments" value="carn" checked>
+          <label for="carn">Carn</label><br>
+        <input type="checkbox" id="peix" name="aliments" value="peix" checked>
+          <label for="peix">Peix</label><br>
+        <input type="checkbox" id="llegum" name="aliments" value="llegum">
+          <label for="llegum">Llegum</label><br>
+        <input type="checkbox" id="verdura" name="aliments" value="verdura">
+          <label for="verdura">Verdura</label>
+      </div><p>
+      
+      <label id="label_fumo">Fumas?</label><br>
+      <input type="radio" id="fuma_si" name="fuma" value="si">
+        <label for="fuma_si">Si</label><br> 
+      <input type="radio" id="fuma_no" name="fuma" value="no">
+        <label for="fuma_no">No</label><p>
+        
+      <label id="label_esports" for="esports">Quins esports sols realitzar?</label><p>
+      <select id="esports" name="esports" size="4" multiple>
+        <option value="cap">Cap</option>
+        <option value="futbol">Futbol</option>
+        <option value="padel">Padel</option>
+        <option value="golf">Golf</option>
+        <option value="tennis">Tennis</option>
+        <option value="voley">Voley</option>
+      </select><p>
+      
+      <label id="label_alergies" for="alergies">Si tens alergias, selecciona la opcio que apareix a continuacio:</label><p>
+      <select id="alergies" name="alergies">
+        <optgroup label="Aliments">
+          <option value="fruita_alergia">Fruita</option>
+          <option value="llet_alergia">Llet</option>
+          <option value="altres_aliments">Altres aliments</option>
+        </optgroup>
+        <optgroup label="Animals">
+          <option value="gossos">Gossos</option>
+          <option value="gats">Gats</option>
+          <option value="altres_animals">Altres animals</option>
+        </optgroup>
+        <optgroup label="Altres">
+          <option value="acaros">Acaros</option>
+          <option value="polen">Polen</option>
+          <option value="medicaments">Medicaments</option>
+        </optgroup>
+      </select>
+      <p>
+      <button id="submit_button" type="submit">Enviar</button>
+</form>
+  </body>
+</html>
