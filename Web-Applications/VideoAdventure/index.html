@@ -1,0 +1,70 @@
+<html>
+<head>
+
+  <title>Video Adventure</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  gap: 13rem;
+  background-color: #003135;
+}
+
+.title {
+  text-align: center;
+  margin: 100px 0 0 0;
+  font-size: 100px;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+}
+
+#easter-egg {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none ;
+  color: white;
+}
+
+#easter-egg:hover {
+  color: #F5B027;
+  transform: scale(1.1);
+}
+
+#start-button {
+  padding: 30px 90px;
+  border-radius: 30px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 50px;
+  letter-spacing: 0.3em;
+  background-color: #034951;
+  border: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: black;
+}
+
+#start-button:hover {
+  background-color: #0FA4AF;
+  cursor: pointer;
+  transform: scale(1.05);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+</style>
+</head>
+<body>
+  <h1 class="title">Juanito'<a href="Easter-Egg.html"><span id="easter-egg">s</span></a> Adventure</h1>
+    <a href="FirstPage.html" id="start-button">Start</a>
+</body>
+</html>

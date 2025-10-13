@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Pregunta Final</title>
+
+<style>
+
+body {
+text-align: center;
+margin-top: 350;
+background-color: black;
+color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Final Question</h2>
+<p>Of the three characters that were there at the beginning, what is the name of the one all the way on the left?</p>
+<input type="text" id="answer" placeholder="Escribe tu respuesta...">
+<button onclick="checkAnswer()">Send</button>
+
+<script>
+function checkAnswer() {
+    const answer = document.getElementById("answer").value.trim().toLowerCase();
+
+    if (answer === "epsilon eagle") {
+        window.location.href = "winner.html";}
+    else {
+        window.location.href = "loser.html";}
+}
+</script>
+
+</body>
+</html>
