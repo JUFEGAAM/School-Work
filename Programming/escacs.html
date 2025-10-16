@@ -2,10 +2,22 @@
 <head>
     <title>Chess Template</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
 <style>
 
 body {
- background-color: #B88074;
+  background-color: #191970;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  font-size: 30px;
+  font-family: "Monoton", sans-serif;
 }
 
 .blanco_casilla {
@@ -25,11 +37,18 @@ body {
 }
 
 #tablero {
-  border-collapse: collapse; height: 500px width 500px;
+  border: collapse;
+  height: 500px;
+  width: 500px;
+  margin-top: -35px;
 }
 
 #tablero td {
-
+  text-align: center;
+  width: calc(500px / 8);
+  height: calc(500px / 8);
+  vertical-align: middle;
+  font-size: 40px;
 }
 
 </style>
@@ -40,83 +59,83 @@ body {
     <table id="tablero">
       <tr>
         <td class="blanco_casilla" pieza="negro_pieza">&#9814;</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9816;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9815;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9813;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9812;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9815;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9816;</td>
         <td class="negro_casilla" pieza="blanco_pieza">&#9814;</td>
       </tr>
       <tr>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9817;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9817;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9817;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9817;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9817;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9817;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9817;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9817;</td>
       </tr>
       <tr>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
+        <td class="blanco_casilla" pieza="blanco_pieza"></td>
+        <td class="negro_casilla" pieza="negro_pieza"></td>
+        <td class="blanco_casilla" pieza="blanco_pieza"></td>
+        <td class="negro_casilla" pieza="negro_pieza"></td>
+        <td class="blanco_casilla" pieza="blanco_pieza"></td>
+        <td class="negro_casilla" pieza="negro_pieza"></td>
+        <td class="blanco_casilla" pieza="blanco_pieza"></td>
+        <td class="negro_casilla" pieza="negro_pieza"></td>
       </tr>
       <tr>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
       </tr>
       <tr>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
       </tr>
       <tr>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
+        <td class="negro_casilla" pieza="blanco_pieza"></td>
+        <td class="blanco_casilla" pieza="negro_pieza"></td>
       </tr>
       <tr>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9823;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9823;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9823;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9823;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9823;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9823;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9823;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9823;</td>
       </tr>
       <tr>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
-        <td class="blanco_casilla" pieza="negro_pieza">a</td>
-        <td class="negro_casilla" pieza="blanco_pieza">a</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9820;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9822;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9821;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9819;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9818;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9821;</td>
+        <td class="negro_casilla" pieza="blanco_pieza">&#9822;</td>
+        <td class="blanco_casilla" pieza="negro_pieza">&#9820;</td>
       </tr>
     </table>
 </body>
