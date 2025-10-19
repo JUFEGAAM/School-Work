@@ -3,19 +3,34 @@
   <title>First Exam Practice</title>
 </head>
 <body>
-  <table style="margin: 350 auto;" border="2">
+  <table style="background-color: black; color: white; border: 5px solid blue" border="2">
     <tr>
       <td colspan="4">First Exam Practice</td>
+      <td rowspan="4"><img width="100" height="200" src="https://cdn-0001.qstv.on.epicgames.com/wFUOCimdhXBjJvwGvn/image/landscape_comp.jpeg"></td>
     </tr>
     <tr>
-      <td></td>
+      <td><input type="text" id="input-texto" placeholder="Escribe texto" maxlength="50"></td>
+      <td><input type="number" id="input-numero" placeholder="Escribe numeros"></td>
+      <td><input type="number" id="input-decimal" placeholder="Escribe decimales" step="0.1"></td>
+      <td><input type="date" id="input-fecha"></td>
     </tr>
+      <td colspan="2"><p>MI PARRAFITO</p></td>
+      <td colspan="2"><a href="https://www.youtube.com/watch?v=URhHL5VMz3U">Wacha Wachita</a></td>
     <tr>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
+      <td colspan="3"><img width="550" height="100" src="https://cdn-0001.qstv.on.epicgames.com/iHTMHsOpnibtbKlDLA/image/landscape_comp.jpeg"></td>
+      <td>Juan Felix Garcia Amills</td>
     </tr>
   </table>
+<button onclick="QuienSoy()">Quien Soy?</button>
+<p id="nombre-edad"></p>
+<script>
+  function QuienSoy() {
+    let nombre = document.getElementById("input-texto").value;
+    let edad = document.getElementById("input-numero").value;
+
+    document.getElementById("nombre-edad").textContent = "Hola " + nombre + ", tienes " + edad + " anyos";
+}
+</script>
+
 </body>
 </html>
