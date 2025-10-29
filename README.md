@@ -14,6 +14,6 @@ I'm starting with HTML. We haven't used CSS and JavaScript yet, but it's good to
 
 ### October 2025
 
-This month, we learned CSS and JavaScript. We made some very interesting but complex tasks, like sending data from a form to a server and more stuff. I'm starting to understand it all pretty well.
+This month, we learned CSS and JavaScript. We made some very interesting but complex tasks, like sending data from a form to a server and more stuff. I'm starting to understand it all pretty well. Oh yeah, and I did a hand-written coding exam. I was scared but did perfectly, I just forgot an h1 :(
 
 I already know what my project for this year is going to be: I'm making a videogame in JavaScript. I think it will be a great journey to make this project.
