@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Exercici 1.7</title>
+
+<style>
+
+@font-face {
+  font-family: 'JellyBelly';
+  src: url('JellyBelly Font.woff') format('woff');
+}
+
+@keyframes girar {
+  from {
+    rotate: 0deg; 
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+body {
+  background-image: url('https://media.istockphoto.com/id/1139445564/es/foto/sandwich-de-calamares.jpg?s=1024x1024&w=is&k=20&c=u8NjEapit1CZA60Ekl6o_NkpTGntt8EA5h2ptWf4Epw=');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+#calamares {
+  position: absolute;
+  font-family: 'JellyBelly', cursive;
+  font-size: 100px;
+  color: black;
+  margin: 260 0 0 300;
+}
+
+#cargar {
+  position: absolute;
+  font-family: 'JellyBelly', cursive;
+  font-size: 80px;
+  color: orange;
+  margin: 100 0 0 520;
+}
+
+#loading {
+  scale: 30%;
+  position: absolute;
+  margin: -100 0 0 620;
+  animation: girar 3s linear infinite;
+}
+
+.pop {
+  scale: 10%;
+}
+
+#pop1 {
+  position; absolute;
+  margin: -600 0 0 0;
+}
+
+#pop2 {
+  position: absolute;
+  margin: -600 0 0 -950;
+}
+
+#pop3 {
+  position: absolute;
+  margin: -600 0 0 -1040;
+}
+
+#pop4 {
+  position: absolute;
+  margin: -600 0 0 -1120;
+}
+
+#pop5 {
+  position: absolute;
+  margin: -600 0 0 -1200;
+}
+</style>
+
+</head>
+<body>
+
+  <h1 id="calamares">Bocata Calamares</h1>
+  <h1 id="cargar">Loading</h1>
+  <img id="loading" src="Pasted-image.png">
+  <img class="pop" id="pop1" src="https://cdn.pixabay.com/photo/2016/12/13/16/17/dancer-1904467_1280.png">
+  <img class="pop" id="pop2" src="https://cdn.pixabay.com/photo/2016/12/13/16/17/dancer-1904467_1280.png">
+  <img class="pop" id="pop3" src="https://cdn.pixabay.com/photo/2016/12/13/16/17/dancer-1904467_1280.png">
+  <img class="pop" id="pop4" src="https://cdn.pixabay.com/photo/2016/12/13/16/17/dancer-1904467_1280.png">
+  <img class="pop" id="pop5" src="https://cdn.pixabay.com/photo/2016/12/13/16/17/dancer-1904467_1280.png">
+
+</body>
+</html>

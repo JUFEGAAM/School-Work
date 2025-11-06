@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio de eventos JavaScript</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+padding: 30px;
+transition: background-color 0.5s;
+}
+h1 {
+color: #333;
+}
+.botones {
+margin: 20px 0;
+}
+button {
+padding: 10px 20px;
+margin: 5px;
+border: none;
+border-radius: 8px;
+color: white;
+font-size: 16px;
+cursor: pointer;
+transition: transform 0.2s;
+}
+button:hover {
+transform: scale(1.1);
+}
+#azul { background-color: #007BFF; }
+#rojo { background-color: #E74C3C; }
+
+#verde { background-color: #28A745; }
+#naranja { background-color: #F39C12; }
+.caja {
+width: 150px;
+height: 150px;
+background-color: lightgray;
+margin: 30px auto;
+line-height: 150px;
+border-radius: 10px;
+transition: all 0.3s ease;
+}
+input {
+padding: 8px;
+width: 200px;
+border-radius: 5px;
+border: 1px solid #ccc;
+margin: 10px;
+}
+#mensaje {
+margin-top: 20px;
+font-weight: bold;
+color: #333;
+}
+</style>
+</head>
+<body>
+<h1>🎨 Ejercicio: Eventos de JavaScript</h1>
+<p>Haz clic en un color para cambiar el fondo:</p>
+<div class="botones">
+<button id="azul">Azul</button>
+<button id="rojo">Rojo</button>
+<button id="verde">Verde</button>
+<button id="naranja">Naranja</button>
+</div>
+<div class="caja">
+Pasa por encima
+
+</div>
+<p>Escribe tu nombre y te saludaré:</p>
+<input type="text" placeholder="Escribe aquí...">
+<br>
+<button>
+Haz doble clic aquí
+</button>
+<p id="mensaje"></p>
+</body>
+</html>
