@@ -58,23 +58,23 @@ color: #333;
 }
 </style>
 </head>
-<body>
+<body onload="alert('Bienvenido, la pagina ha cargado correctamente')">
 <h1>🎨 Ejercicio: Eventos de JavaScript</h1>
 <p>Haz clic en un color para cambiar el fondo:</p>
 <div class="botones">
-<button id="azul">Azul</button>
-<button id="rojo">Rojo</button>
-<button id="verde">Verde</button>
-<button id="naranja">Naranja</button>
+<button id="azul" onclick="document.body.style.backgroundColor = '#007BFF'">Azul</button>
+<button id="rojo" onclick="document.body.style.backgroundColor = '#E74C3C'">Rojo</button>
+<button id="verde" onclick="document.body.style.backgroundColor = '#28A745'">Verde</button>
+<button id="naranja" onclick="document.body.style.backgroundColor = '#F39C12'">Naranja</button>
 </div>
-<div class="caja">
+<div class="caja" onmouseover="this.textContent = 'Estas encima!'; this.style.backgroundColor = '#39FF14'";
+    onmouseout="this.textContent = 'Pasa por encima'; this.style.backgroundColor = 'grey'";>
 Pasa por encima
-
 </div>
 <p>Escribe tu nombre y te saludaré:</p>
-<input type="text" placeholder="Escribe aquí...">
+<input type="text" placeholder="Escribe aquí..." onblur="alert('Hola ' + this.value)">
 <br>
-<button>
+<button ondblclick="document.getElementById('mensaje').textContent = '¡Doble clic detectado!'">
 Haz doble clic aquí
 </button>
 <p id="mensaje"></p>
