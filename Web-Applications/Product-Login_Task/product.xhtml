@@ -3,7 +3,78 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+  <title>Alta de Producto</title>
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body>
-<body>
+  <div id="form-container">
+    <img id="MCDiabetes" alt="Me encanta el MCDiabetes" src="MCDiabetes.jpg"/>
+    <h1>Alta de Producto</h1>
+    
+    <form action="http://172.17.120.69:8080/Manolo/LectorFormularios" method="post">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required="required"/>
+      
+      <label for="descripcion">Descripción del producto:</label>
+      <textarea id="descripcion" name="descripcion" rows="3" required="required"></textarea>
+      
+      <label>Categoría (puede seleccionar varias):</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="cat1" name="categoria" value="Bebidas"/>
+        <label for="cat1">Bebidas</label>
+        <input type="checkbox" id="cat2" name="categoria" value="Comida"/>
+        <label for="cat2">Comida</label>
+        <input type="checkbox" id="cat3" name="categoria" value="Postres"/>
+        <label for="cat3">Postres</label>
+        <input type="checkbox" id="cat4" name="categoria" value="Snacks"/>
+        <label for="cat4">Snacks</label>
+        <input type="checkbox" id="cat5" name="categoria" value="Salsas"/>
+        <label for="cat5">Salsas</label>
+        <input type="checkbox" id="cat6" name="categoria" value="Especiales"/>
+        <label for="cat6">Especiales</label>
+      </div>
+      
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" name="cantidad" min="0" required="required"/>
+      
+      <label for="caducidad">Fecha de caducidad:</label>
+      <input type="date" id="caducidad" name="caducidad" required="required"/>
+      
+      <label for="precio">Precio (€):</label>
+      <input type="number" id="precio" name="precio" step="0.01" min="0" required="required"/>
+      
+      <label>¿Está a la venta?</label>
+      <div class="radio-group">
+        <input type="radio" id="venta-si" name="venta" value="si" required="required"/>
+        <label for="venta-si">Sí</label>
+        <input type="radio" id="venta-no" name="venta" value="no"/>
+        <label for="venta-no">No</label>
+      </div>
+      
+      <label for="iva">Tipo de IVA:</label>
+      <select id="iva" name="iva" required="required">
+        <option value="">Seleccione una opción</option>
+        <option value="con-iva">Con IVA (21%)</option>
+        <option value="iva-reducido">IVA Reducido (10%)</option>
+        <option value="sin-iva">Sin IVA</option>
+      </select>
+      
+      <label for="venta-en">Venta en:</label>
+      <select id="venta-en" name="venta-en" multiple="multiple" size="2">
+        <option value="tienda-fisica">Tienda física</option>
+        <option value="online">Online</option>
+      </select>
+      
+      <div class="button-group">
+        <button type="submit">Guardar Producto</button>
+        <button type="button" onclick="listarProductos()">Listar Productos Guardados</button>
+      </div>
+    </form>
+  </div>
+<script>
+  function listarProductos() {
+    window.location.href = "http://172.17.120.69:8080/Manolo/LectorFormularios?action=list";
+  }
+</script>
+</body>
 </html>

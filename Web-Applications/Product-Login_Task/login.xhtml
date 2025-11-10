@@ -4,76 +4,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Login</title>
-<style>
-body {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #F5F5F5;
-  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  color: #333333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#MCDiabetes {
-  border-radius: 15px;
-  max-width: 80%;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-#login-box {
-  background-color: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  padding: 35px;
-  width: 400px;
-  max-width: 90%;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-#login-button {
-  padding: 2px 20px 2px 20px;
-  background-color: 
-  cursor: pointer;
-}
-
-#title {
-  margin-top: -10px;
-}
-</style>
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body>
-
   <div id="login-box">
     <h1 id="title">MCLogin</h1>
     <img id="MCDiabetes" alt="Me encanta el MCDiabetes" src="MCDiabetes.jpg"/>
-    <input placeholder="User"/>
+    <input id="user" placeholder="User"/>
     <p></p>
-    <input placeholder="Password" type="password"/>
+    <input id="pass" placeholder="Password" type="password"/>
     <p></p>
-    <a href="producto.xhtml" id="login-button">Enter</a>
+    <a href="#" id="login-button" onclick="login(); return false;">ENTRAR</a>
   </div>
-
 <script>
-  function login () {
+  function login() {
     let user = document.getElementById("user").value;
     let pass = document.getElementById("pass").value;
-
-    let url = "http://172.17.120.69/8080/Manolo/LoginService?" + user +
-      "&amp;pass=" + pass;
-
-    fetch(url, { method: 'POST' }).then(response => response.text()).then(text => {
-      if (text.trim() == "S") {
-        alert("Access Granted");
-        window.location.href = "PAGINA QUE PIDE MANOLO"
-      } else {
-        alert("Invalid username or password");
-      }
-    });
+    let url = "http://172.17.120.69/8080/Manolo/LoginService?" + user + "&amp;pass=" + pass;
+    
+    fetch(url, { method: 'POST' })
+      .then(response => response.text())
+      .then(text => {
+        if (text.trim() === "S") {
+          window.location.href = "product.xhtml";
+        } else {
+          alert("Invalid username or password");
+        }
+      })
+      .catch(error => {
+        alert("Error de conexión: " + error.message);
+      });
   }
 </script>
 </body>
