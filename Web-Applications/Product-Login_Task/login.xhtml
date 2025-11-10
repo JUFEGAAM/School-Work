@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Login</title>
+<style>
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5F5;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#MCDiabetes {
+  border-radius: 8px;
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#login-box {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  padding: 35px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+
+  <div id="login-box">
+    <img id="MCDiabetes" alt="Me encanta el MCDiabetes" src="MCDiabetes.jpg"/>
+    <p></p>
+    <label>User:</label>
+    <input></input>
+    <p></p>
+    <label>Password:</label>
+    <input></input>
+    <p></p>
+    <bottom></bottom>
+  </div>
+
+<script>
+  function login () {
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
+
+    let url = "http://172.17.120.69/8080/Manolo/LoginService?" + user +
+      "&amp;pass=" + pass;
+
+    fetch(url, { method: 'POST' }).then(response => response.text()).then(text => {
+      if (text.trim() == "S") {
+        alert("Acceso Concedido");
+        window.location.href = "PAGINA QUE PIDE MANOLO"
+      } else {
+        alert("Usuario o contraseña incorrectos");
+      }
+    });
+  }
+</script>
+</body>
+</html>
