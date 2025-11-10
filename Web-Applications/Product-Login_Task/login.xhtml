@@ -6,7 +6,7 @@
   <title>Login</title>
 <style>
 body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
   background-color: #F5F5F5;
@@ -18,7 +18,7 @@ body {
 }
 
 #MCDiabetes {
-  border-radius: 8px;
+  border-radius: 15px;
   max-width: 80%;
   height: auto;
   margin-bottom: 10px;
@@ -34,20 +34,28 @@ body {
   text-align: center;
   box-sizing: border-box;
 }
+
+#login-button {
+  padding: 2px 20px 2px 20px;
+  background-color: 
+  cursor: pointer;
+}
+
+#title {
+  margin-top: -10px;
+}
 </style>
 </head>
 <body>
 
   <div id="login-box">
+    <h1 id="title">MCLogin</h1>
     <img id="MCDiabetes" alt="Me encanta el MCDiabetes" src="MCDiabetes.jpg"/>
+    <input placeholder="User"/>
     <p></p>
-    <label>User:</label>
-    <input></input>
+    <input placeholder="Password" type="password"/>
     <p></p>
-    <label>Password:</label>
-    <input></input>
-    <p></p>
-    <bottom></bottom>
+    <a href="producto.xhtml" id="login-button">Enter</a>
   </div>
 
 <script>
@@ -60,10 +68,10 @@ body {
 
     fetch(url, { method: 'POST' }).then(response => response.text()).then(text => {
       if (text.trim() == "S") {
-        alert("Acceso Concedido");
+        alert("Access Granted");
         window.location.href = "PAGINA QUE PIDE MANOLO"
       } else {
-        alert("Usuario o contraseña incorrectos");
+        alert("Invalid username or password");
       }
     });
   }
