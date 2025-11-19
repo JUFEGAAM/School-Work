@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio de variables con JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #005ea8;
+      margin-bottom: 30px;
+    }
+
+    .contenedor {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    textarea {
+      width: 250px;
+      height: 200px;
+      font-size: 16px;
+      padding: 10px;
+      resize: none;
+    }
+
+    .botones {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 6px;
+      border: none;
+      background-color: #0078d7;
+      color: white;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #005ea8;
+    }
+
+    .info {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .info input {
+      width: 80px;
+      text-align: center;
+      margin: 5px;
+      padding: 5px;
+    }
+
+    .linea {
+      margin-top: 10px;
+    }
+
+    .animal-form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 400px;
+    }
+
+    .animal-form input {
+      padding: 8px;
+      font-size: 16px;
+      margin: 5px;
+      text-align: center;
+    }
+
+    .animal-form label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejercicio de variables con JavaScript</h1>
+
+  <div class="contenedor">
+    <textarea id="izquierda" placeholder="Texto izquierda..."></textarea>
+
+    <div class="botones">
+      <button onClick="moverDerecha()">⮕</button>
+      <button onClick="moverIzquierda()">⮜</button>
+    </div>
+
+    <textarea id="derecha" placeholder="Texto derecha..."></textarea>
+  </div>
+
+  <div class="info">
+    <div>
+      <label>Número de cambios realizados: </label>
+      <input type="text" id="contador" readonly value="0">
+    </div>
+
+    <div class="linea">
+      <label>Fecha del último cambio:</label><br>
+      <input type="text" id="dia" placeholder="Día" readonly>
+      <input type="text" id="mes" placeholder="Mes" readonly>
+      <input type="text" id="año" placeholder="Año" readonly>
+      <input type="text" id="hora" placeholder="hh:mm" readonly>
+    </div>
+  </div>
+
+  <!-- FORMULARIO DE ANIMALES -->
+  <div class="animal-form">
+    <h3>Formulario de animales 🐾</h3>
+    <label for="animal">Introduce el nombre de un animal:</label><br>
+    <input onKeyUp="mostrarAnimal(event)" type="text" id="nomAnimal" placeholder="Ejemplo: Perro"><br><br>
+
+    <label>Número de caracteres:</label>
+    <input type="text" id="numCaracteres" readonly><br>
+
+    <label>Resultado:</label>
+    <input type="text" id="resultadoAnimal" readonly style="width: 250px;"><br>
+
+    <label>¿Es Perro?</label>
+    <input type="text" id="checkPerro" readonly>
+  </div>
+
+  <script>
+	
+	let numeroCambios = 0;
+
+	function actualizarDatos() {
+	numeroCambios++;
+    document.getElementById("contador").value = numeroCambios;
+
+    let fecha = new Date();
+
+    document.getElementById("dia").value = fecha.getDate();
+    document.getElementById("mes").value = fecha.getMonth() + 1;
+    document.getElementById("año").value = fecha.getFullYear();
+
+    let minutos = fecha.getMinutes();
+    if (minutos < 10) {
+        minutos = "0" + minutos;
+    }
+    
+    let horaCompleta = fecha.getHours() + ":" + minutos;
+    document.getElementById("hora").value = horaCompleta;
+}
+
+    function moverDerecha() {
+
+	let texto = document.getElementById("izquierda").value;
+
+	if (texto.length > 0) {
+		document.getElementById("derecha").value = texto;
+		document.getElementById("izquierda").value = "";
+		actualizarDatos();
+	}
+    }
+
+    function moverIzquierda() {
+
+	    let texto = document.getElementById("derecha").value;
+
+	    if (texto.length > 0) {
+		document.getElementById("izquierda").value = texto;
+		document.getElementById("derecha").value = "";
+		actualizarDatos();
+	    }
+    }
+
+    function mostrarAnimal(event) {
+
+	if (event.key === "Enter") {
+
+	let animal = document.getElementById("nomAnimal").value;
+
+	document.getElementById("numCaracteres").value = animal.length;
+	document.getElementById("resultadoAnimal").value = "Tu animal es " + animal;
+
+	let Perro = (animal.toLowerCase() === "perro");
+
+	document.getElementById("checkPerro").value = Perro;
+	}
+    }
+  </script>
+</body>
+</html>
