@@ -1,0 +1,230 @@
+<html>
+<head>
+  <title>Personal Data Form</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+<style>
+
+body {
+  background-color: black;
+  color: white;
+}
+
+table {
+  margin: -15px 1225 0 auto;
+  border-color: #CD432A;
+  border-collapse: collapse;
+}
+
+#salute {
+  position: absolute;
+  top: 175;
+  left: 370;
+  color: #CD432A;
+  background-color: #F4CA8D; 
+}
+
+#salute:hover {
+  background-color: #CD432A;
+  color: #F4CA8D;
+}
+
+#wdil:hover {
+  background-color: #CD432A;
+  color: #F4CA8D;
+}
+
+#wdil {
+  position: absolute;
+  top: 225;
+  left: 370;
+  color: #CD432A;
+  background-color: #F4CA8D
+}
+
+#aoe {
+  position: absolute;
+  top: -25px;
+  left: 1265px;
+}
+
+#title {
+  font-size: 55;
+  color: #F4CA8D;
+}
+
+label {
+  color: #F4CA8D;
+}
+
+input {
+  background-color: #CD432A;
+  width: 250;
+}
+
+input::placeholder {
+  color: #bbbbbb;
+}
+
+#displaysalute {
+  position: absolute;
+  top: 175;
+  left: 425;
+}
+
+#displaywdil {
+  position: absolute;
+  top: 225;
+  left: 485;
+}
+
+#hammer {
+  position: absolute;
+  top: 205;
+  left: 900;
+}
+
+#sega {
+  position: absolute;
+  top: 330;
+  left: 400;
+  scale: 120%;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+      <img id="sega" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYdCb0xtrcdhZmShhGLkvY5fLiLzkH-bpaw&s">
+      <img id="aoe" width="250" src="https://cdn2.steamgriddb.com/logo/e6a2c4d36d6a52cadca1dfeca545afb0.png">
+      <img id="hammer" src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyeW9jazVlcmQ3MzZkbGpqandzdXBudjFpeGV3bDA3dWxkeXhlYmRmNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TdRWuQlaiDARWYCatW/giphy.gif">
+        <h1 id="title" align="center" style="background-color: #CD432A; border: 2px solid #F4CA8D;">Personal Data</h1>
+  <table align="center" border="2">
+    <tr>
+      <td>
+      <label>Name</label><br>
+      <input id="name" type="text" max="50" placeholder="e.g. Manolo">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>First Surname</label><br>
+      <input id="surname1" type="text" max="50" placeholder="e.g. Garcia">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Second Surname</label><br>
+      <input id="surname2" type="text" max="50" placeholder="e.g. Gonzalez">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Street Type</label><br>
+      <input id="strtype" type="text" max="50" placeholder="e.g. Street, Avenue, Highway">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Address</label><br>
+      <input id="address" type="text" max="50" placeholder="e.g. Balanguera">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Number</label><br>
+      <input id="number" type="number" max="3" placeholder="e.g. 24">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Floor</label><br>
+      <input id="floor" type="number" max="2" placeholder="e.g. 5º">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Door</label><br>
+      <input id="door" type="text" max="1" placeholder="e.g. C">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Province</label><br>
+      <input id="province" type="text" max="50" placeholder="e.g. Balearic Islands">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>ZIP Code</label><br>
+      <input id="zip" type="number" max="5" placeholder="e.g. 07006">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Phone Number</label><br>
+      <input type="text" max="13" placeholder="e.g. +34 699 90 50 69">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Email</label><br>
+      <input type="text" max="100" placeholder="e.g. manolitogamer@gmail.com">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Salary</label><br>
+      <input type="number" step="0.1" placeholder="e.g. 1764.60">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <label>Date of Birth</label><br>
+      <input type="date" placeholder="e.g. 05/28/2007">
+      </tr>
+    </tr>
+  </table>
+      <button id="salute">Salute</button>
+      <button id="wdil">Where do i live?</button>
+      <div id="displaysalute"></div>
+      <div id="displaywdil"></div>
+</div>
+<script>
+  let saluteButton = document.getElementById("salute");
+  
+  saluteButton.addEventListener("click", function() {
+
+    let name = document.getElementById("name").value;
+    let surname1 = document.getElementById("surname1").value;
+    let surname2 = document.getElementById("surname2").value;
+
+    let fullname = "Hello, " + name + " " + surname1 + " " + surname2;
+
+    let displaysalute = document.getElementById("displaysalute");
+    displaysalute.textContent = fullname
+});
+
+  let wdilButton = document.getElementById("wdil");
+  
+  wdilButton.addEventListener("click", function() {
+
+    let strtype = document.getElementById("strtype").value;
+    let address = document.getElementById("address").value;
+    let number = document.getElementById("number").value;
+    let floor = document.getElementById("floor").value;
+    let door = document.getElementById("door").value;
+    let province = document.getElementById("province").value;
+    let zip = document.getElementById("zip").value;
+    
+    let fulladdress = strtype + " " + address + ", " + number + ", " + floor + door + ", " + province + ", " + zip;
+
+    let displaywdil = document.getElementById("displaywdil");
+    displaywdil.textContent = fulladdress
+});
+</script
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
