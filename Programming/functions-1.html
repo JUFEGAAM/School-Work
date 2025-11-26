@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Colorear Letras y Números</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      margin-top: 30px;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .letra {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: white;
+      border: 2px solid #ccc;
+      transition: 0.3s;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .coloreada {
+      background-color: #4CAF50;
+      color: white;
+      border-color: #388E3C;
+      transform: scale(1.1);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Colorea una letra o número</h1>
+  <p>Pulsa el botón o haz clic en una letra/número para colorearla.</p>
+
+  <div class="contenedor" id="contenedor"></div>
+
+  <button>Elegir letra o número</button>
+
+  <script>
+    // Función que genera toda la estructura HTML dinámicamente
+    function initHTML() {
+      const contenedor = document.getElementById("contenedor");
+      contenedor.innerHTML = ""; // Limpia contenido previo
+
+      // Crear letras A–Z y números 0–9
+      const caracteres = [];
+      for (let i = 65; i <= 90; i++) {
+        caracteres.push(String.fromCharCode(i)); // A-Z
+      }
+      for (let i = 0; i <= 9; i++) {
+        caracteres.push(i.toString());
+      }
+
+      // Crear los divs en pantalla
+      caracteres.forEach(c => {
+        const div = document.createElement("div");
+        div.className = "letra";
+        div.id = c;
+        div.textContent = c;
+
+        // Evento de clic
+        div.addEventListener("click", function() {
+        });
+
+        contenedor.appendChild(div);
+      });
+    }
+
+    initHTML();
+
+    // Pide una letra o número con prompt
+    function pedirLetra() {
+    }
+
+    // Muestra cuántas letras/números se han introducido
+    function mostrarContador() {
+    }
+
+    // Muestra mensaje al hacer clic o introducir
+    function mostrarMensaje(letra) {
+    }
+
+    // Colorea el div correspondiente
+    function coloreaDiv(letra) {
+    }
+  </script>
+</body>
+</html>
