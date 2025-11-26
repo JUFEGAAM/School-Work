@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Functions 2 &#128187;</title>
+</head>
+<body>
+  <button onclick="ejercicioPalabra()">1. Palabra Larga/Corta</button>
+  <br>
+  <button onclick="ejercicioDescuento()">2. Calcular Descuento</button>
+  <br>
+  <button onclick="ejercicioPromedio()">3. Promedio de 3 numeros</button>
+<script>
+  function determinarLongitud(texto) {
+    if (texto.length > 5) {
+        return "larga";
+    } else {
+        return "corta";
+      }
+    }
+
+  function ejercicioPalabra() {
+      let palabra = prompt("Ingresa una palabra:");
+            
+    if (palabra) {
+
+      let resultado = determinarLongitud(palabra);
+          alert('La palabra "' + palabra + '" es ' + resultado);
+      }
+    }
+
+    function calcularPrecioFinal(precio, descuento) {
+      let dineroDescontado = (precio * descuento) / 100;
+      let precioFinal = precio - dineroDescontado;
+      return precioFinal;
+    }
+
+    function ejercicioDescuento() {
+        let precioOriginal = parseFloat(prompt("Precio original:"));
+        let porcentaje = parseFloat(prompt("Porcentaje de descuento:"));
+
+      if (!isNaN(precioOriginal) && !isNaN(porcentaje)) {
+        let final = calcularPrecioFinal(precioOriginal, porcentaje);
+          alert("El precio final es: " + final.toFixed(2));
+      } else {
+          alert("Por favor, introduce numeros validos.");
+      }
+    }
+
+    function ejercicioPromedio() {
+        let n1 = Number(prompt("Primer numero:"));
+        let n2 = Number(prompt("Segundo numero:"));
+        let n3 = Number(prompt("Tercer numero:"));
+
+        let promedio = (n1 + n2 + n3) / 3;
+
+          alert("El promedio es: " + promedio);
+    }
+</script>
+</body>
+</html>
