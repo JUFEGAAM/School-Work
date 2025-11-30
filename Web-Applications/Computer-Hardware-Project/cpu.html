@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Anatomy - CPU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span class="text-primary">💻</span> PC Anatomy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active text-primary" href="#" role="button" data-bs-toggle="dropdown">Components</a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow">
+                            <li><a class="dropdown-item active" href="cpu.html">CPU</a></li>
+                            <li><a class="dropdown-item" href="motherboard.html">Motherboard</a></li>
+                            <li><a class="dropdown-item" href="ram.html">RAM Memory</a></li>
+                            <li><a class="dropdown-item" href="hard-drive.html">Hard Drive / Storage</a></li>
+                            <li><a class="dropdown-item" href="power-supply.html">Power Supply (PSU)</a></li>
+                            <li><a class="dropdown-item" href="graphics-card.html">Graphics Card (GPU)</a></li>
+                            <li><a class="dropdown-item" href="case.html">PC Case</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="peripherals.html">External Devices</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-secondary">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-secondary">Components</a></li>
+                <li class="breadcrumb-item active text-primary" aria-current="page">CPU</li>
+            </ol>
+        </nav>
+
+        <div class="row mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div id="componentCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#componentCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#componentCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#componentCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#componentCarousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#componentCarousel" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#componentCarousel" data-bs-slide-to="5"></button>
+                    </div>
+                    
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/CPU/cpu-1.jpg" class="d-block w-100" alt="CPU assembly step 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/CPU/cpu-2.jpg" class="d-block w-100" alt="CPU assembly step 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/CPU/cpu-3.jpg" class="d-block w-100" alt="CPU component view front">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/CPU/cpu-4.jpg" class="d-block w-100" alt="CPU component view back">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/CPU/cpu-5.jpg" class="d-block w-100" alt="CPU processor front">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/CPU/cpu-6.jpg" class="d-block w-100" alt="CPU processor back pins">
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#componentCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#componentCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-6 ps-lg-4">
+                <h1 class="display-4 fw-bold text-white">CPU (CENTRAL PROCESSING UNIT)</h1>
+                <h3 class="h4 text-primary mb-4">Model: Intel Core i5-2320</h3>
+                
+                <div class="p-4 bg-dark-custom rounded border border-secondary border-opacity-25">
+                    <h4 class="text-white mb-3">Definition & Function</h4>
+                    <p class="text-secondary lead fs-6">
+                        The CPU is the core of the PC. It works like a brain, executing instructions and bringing order to all the data. Without it, the computer wouldn't have the workflow needed to function correctly.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-white border-bottom border-secondary border-opacity-25 pb-2 mb-4">
+                    <i class="bi bi-tools text-primary me-2"></i>Assembly & Disassembly
+                </h2>
+                
+                <div class="card bg-dark-custom border-secondary border-opacity-25 mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Step 1: PREPARATION</h5>
+                        <p class="card-text text-secondary">First, to reach the socket, unplug the computer and open the case. Next, remove the CPU Cooler. In this specific model, instead of screws, simply turn the locking pins at the four corners to release the mechanism. Once the cooler is off, the CPU is revealed.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-dark-custom border-secondary border-opacity-25 mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Step 2: REMOVING THE COMPONENT</h5>
+                        <p class="card-text text-secondary">Now, locate the retention lever that locks the CPU in place. Push it down, move it slightly to the side to unhook it, and let it rise slowly. This releases the metal cover. Finally, carefully lift the CPU out of the socket, holding it only by the edges.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-dark-custom border-secondary border-opacity-25 mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Step 3: INSTALLING THE NEW COMPONENT</h5>
+                        <p class="card-text text-secondary">For the final step, we have to be careful. First, check if you have a PGA (pins on CPU) or LGA (pins on socket) type. This is important so you don't bend the pins. To install, look for the corner with a small triangle mark on both the CPU and socket. That mark tells you the correct orientation. Place the CPU slowly and very carefully. Once placed, put on the metal cover and push down the lever. If it fits perfectly, you did it right; but if you placed it wrong, that is when you will hear a very painful noise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="alert alert-custom d-flex align-items-center" role="alert">
+                    <i class="bi bi-info-circle-fill text-primary fs-2 me-3"></i>
+                    <div>
+                        <h4 class="alert-heading text-white">Maintenance & Tips</h4>
+                        <p class="text-secondary mb-0">
+                           For CPU maintenance, the main task is changing the thermal paste. It is recommended to change it every 2 to 3 years, or if you notice higher temperatures than usual. Also, remember to clean the dust from the heatsink and fan regularly to ensure good airflow 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-4 text-center text-secondary" style="border-top: 1px solid #30363d;">
+      <div class="container"><small>PC Anatomy Project | <b>Made by JUFEGAAM</b> | With Bootstrap</small></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

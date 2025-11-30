@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Anatomy - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span class="text-primary">💻</span> PC Anatomy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active text-primary" href="index.html">Home</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Components</a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow">
+                            <li><a class="dropdown-item" href="cpu.html">CPU</a></li>
+                            <li><a class="dropdown-item" href="motherboard.html">Motherboard</a></li>
+                            <li><a class="dropdown-item" href="ram.html">RAM Memory</a></li>
+                            <li><a class="dropdown-item" href="hard-drive.html">Hard Drive / Storage</a></li>
+                            <li><a class="dropdown-item" href="power-supply.html">Power Supply (PSU)</a></li>
+                            <li><a class="dropdown-item" href="graphics-card.html">Graphics Card (GPU)</a></li>
+                            <li><a class="dropdown-item" href="case.html">PC Case</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#offcanvasAbout" data-bs-toggle="offcanvas" role="button" aria-controls="offcanvasAbout">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-dark-custom text-center py-5 mb-5">
+        <div class="container">
+            <h1 class="fw-light display-4 text-white">Welcome to <span class="text-primary">PC Anatomy</span></h1>
+            <p class="lead text-secondary">Explore the guts of a computer, piece by piece.</p>
+        </div>
+    </header>
+
+    <div class="container mb-5">
+        <div class="row align-items-start">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                
+                <div id="pcMainCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner" id="carouselContainer"></div>
+                    
+                    <button class="carousel-control-prev" type="button" data-bs-target="#pcMainCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#pcMainCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+            </div>
+
+            <div class="col-lg-7 ps-lg-5">
+                <h2 class="fw-light text-white">Look Inside The Box</h2>
+                <p class="text-secondary mb-4">Here is a complete list of the components we will explore. Click on any item to see details.</p>
+                
+                <div class="list-group shadow-sm">
+                    <a href="cpu.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span>🧠 Central Processing Unit (CPU)</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="motherboard.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span>🗺️ Motherboard</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="ram.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span>⚡ RAM Memory</span><i class="bi bi-chevron-right"></i></a>
+                     <a href="hard-drive.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span>💾 Hard Drive / Storage</span><i class="bi bi-chevron-right"></i></a>
+                     <a href="power-supply.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span>🔋 Power Supply (PSU)</span><i class="bi bi-chevron-right"></i></a>
+                    <a href="graphics-card.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span>🎮 Graphics Card (GPU)</span><i class="bi bi-chevron-right"></i></a>
+                     <a href="case.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><span>📦 PC Case / Chassis</span><i class="bi bi-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end bg-dark border-start border-secondary" data-bs-scroll="true" tabindex="-1" id="offcanvasAbout" aria-labelledby="offcanvasAboutLabel">
+        <div class="offcanvas-header bg-dark-custom border-bottom border-secondary border-opacity-25">
+          <h5 class="offcanvas-title text-white" id="offcanvasAboutLabel">
+              <span class="text-primary">ℹ️</span> About Project
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body text-secondary">
+          <h6 class="text-white">The Creator</h6>
+          <p>This project was created by <strong>JUFEGAAM</strong> for the Web Application subject.</p>
+          <hr class="border-secondary">
+          
+          <h6 class="text-white">Curiosities</h6>
+          <ul class="list-unstyled">
+              <li class="mb-2">🔹 <strong>Photos:</strong> All component photos were taken from a real disassembly in class.</li>
+              <li class="mb-2">🔹 <strong>Tech Stack:</strong> Built using HTML5, CSS3, and Bootstrap.</li>
+              <li class="mb-2">🔹 <strong>Dark Mode:</strong> If you use Light mode you are stupid, respect your eyes.</li>
+          </ul>
+          
+          <hr class="border-secondary">
+          <div class="alert alert-dark border-primary" role="alert">
+              <small>Thanks for visiting my project!</small>
+          </div>
+        </div>
+      </div>
+
+    <footer class="py-4 text-center text-secondary" style="border-top: 1px solid #30363d;">
+        <div class="container"><small>PC Anatomy Project | Bootstrap 5 Dark Mode</small></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
