@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises</title>
+</head>
+<body>
+
+    <h1>JavaScript Conditionals Exercises</h1>
+    
+    <button onclick="exercise1()">1. Positive, Negative or Zero</button>
+    <br><br>
+    <button onclick="exercise2()">2. Check Legal Age</button>
+    <br><br>
+    <button onclick="exercise3()">3. Check Password</button>
+    <br><br>
+    <button onclick="exercise4()">4. Even or Odd</button>
+    <br><br>
+    <button onclick="exercise5()">5. Pass or Fail</button>
+    <br><br>
+    <button onclick="exercise6()">6. Larger of Two Numbers</button>
+    <br><br>
+    <button onclick="exercise7()">7. Temperature</button>
+    <br><br>
+    <button onclick="exercise8()">8. Day of the Week</button>
+    <br><br>
+    <button onclick="exercise9()">9. Word Length</button>
+    <br><br>
+    <button onclick="exercise10()">10. Access by Role</button>
+
+    <script>
+        function exercise1() {
+            let number = prompt("Enter a number:");
+            
+            if (number > 0) {
+                alert("The number is positive");
+            } else if (number < 0) {
+                alert("The number is negative");
+            } else {
+                alert("The number is zero");
+            }
+        }
+
+        function exercise2() {
+            let age = prompt("Enter your age:");
+
+            if (age >= 18) {
+                alert("You are of legal age");
+            } else {
+                alert("You are a minor");
+            }
+        }
+
+        function exercise3() {
+            let password = prompt("Enter the password:");
+
+            if (password === "juan") {
+                alert("Correct password");
+            } else {
+                alert("Incorrect password");
+            }
+        }
+
+        function exercise4() {
+            let number = prompt("Enter a number:");
+
+            if (number % 2 === 0) {
+                alert("The number is even");
+            } else {
+                alert("The number is odd");
+            }
+        }
+
+        function exercise5() {
+            let grade = prompt("Enter your grade:");
+
+            if (grade >= 5) {
+                alert("Passed");
+            } else {
+                alert("Failed");
+            }
+        }
+
+        function exercise6() {
+            let number1 = Number(prompt("Enter the first number:"));
+            let number2 = Number(prompt("Enter the second number:"));
+
+            if (number1 > number2) {
+                alert("The first number is larger");
+            } else if (number1 < number2) {
+                alert("The first number is smaller");
+            } else {
+                alert("Both numbers are equal");
+            }
+        }
+
+        function exercise7() {
+            let temp = prompt("Enter the temperature:");
+
+            if (temp < 10) {
+                alert("It is cold");
+            } else if (temp >= 10 && temp <= 25) {
+                alert("Nice weather");
+            } else {
+                alert("It is hot");
+            }
+        }
+
+        function exercise8() {
+            let day = Number(prompt("Enter a number from 1 to 7:"));
+
+            switch (day) {
+                case 1:
+                    alert("Monday");
+                    break;
+                case 2:
+                    alert("Tuesday");
+                    break;
+                case 3:
+                    alert("Wednesday");
+                    break;
+                case 4:
+                    alert("Thursday");
+                    break;
+                case 5:
+                    alert("Friday");
+                    break;
+                case 6:
+                    alert("Saturday");
+                    break;
+                case 7:
+                    alert("Sunday");
+                    break;
+                default:
+                    alert("Invalid number");
+            }
+        }
+
+        function exercise9() {
+            let word = prompt("Enter a word:");
+
+            if (word.length < 5) {
+                alert("It is a short word");
+            } else {
+                alert("It is a long word");
+            }
+        }
+
+        function exercise10() {
+            let role = prompt("Enter your role (admin, user):");
+
+            if (role === "admin") {
+                alert("Full access");
+            } else if (role === "user") {
+                alert("Limited access");
+            } else {
+                alert("No access");
+            }
+        }
+    </script>
+</body>
+</html>
