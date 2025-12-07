@@ -7,8 +7,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .scrollspy-target {
+            scroll-margin-top: 120px;
+        }
+        .sticky-menu {
+            position: sticky;
+            top: 100px;
+        }
+    </style>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mb-list-group" data-bs-smooth-scroll="true" tabindex="0">
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
         <div class="container">
@@ -31,8 +40,6 @@
                             <li><a class="dropdown-item" href="power-supply.html">Power Supply (PSU)</a></li>
                             <li><a class="dropdown-item" href="graphics-card.html">Graphics Card (GPU)</a></li>
                             <li><a class="dropdown-item" href="case.html">PC Case</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="peripherals.html">External Devices</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -114,7 +121,7 @@
                 <div class="card bg-dark-custom border-secondary border-opacity-25 mb-3">
                     <div class="card-body">
                         <h5 class="card-title text-primary">Step 2: PLACEMENT & SCREWS</h5>
-                        <p class="card-text text-secondary">Gently slide the motherboard in until the screw holes match the copper legs. Screw them in</p>
+                        <p class="card-text text-secondary">Gently slide the motherboard in until the screw holes match the copper legs. Screw them in.</p>
                     </div>
                 </div>
 
@@ -123,6 +130,57 @@
                         <h5 class="card-title text-primary">Step 3: CONNECTIONS</h5>
                         <p class="card-text text-secondary">Now comes the messy part. You have to connect the huge 24-pin cable for power, the smaller CPU power cable (usually top left), and all the tiny cables for the front buttons (Power SW, Reset SW).</p>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-white border-bottom border-secondary border-opacity-25 pb-2 mb-4">
+                    <i class="bi bi-search text-primary me-2"></i>Board Anatomy Details
+                </h2>
+                <p class="text-secondary">Explore the specific parts of the motherboard in detail.</p>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+                <div id="mb-list-group" class="list-group sticky-menu shadow">
+                    <a class="list-group-item list-group-item-action" href="#part-socket">🔲 CPU Socket</a>
+                    <a class="list-group-item list-group-item-action" href="#part-ram">⚡ RAM Slots</a>
+                    <a class="list-group-item list-group-item-action" href="#part-pcie">🎮 PCIe Slots</a>
+                    <a class="list-group-item list-group-item-action" href="#part-io">🔌 I/O Panel</a>
+                    <a class="list-group-item list-group-item-action" href="#part-chipset">🧠 The Chipset</a>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-lg-9">
+                <div class="scrollspy-content">
+                    
+                    <div class="p-4 bg-dark-custom rounded border border-secondary border-opacity-25 mb-4">
+                        <h4 id="part-socket" class="text-white scrollspy-target">The CPU Socket</h4>
+                        <p class="text-secondary">This is where the processor lives. It has hundreds of pins (LGA) or holes (PGA). It has a metal lever to lock the CPU in place.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-custom rounded border border-secondary border-opacity-25 mb-4">
+                        <h4 id="part-ram" class="text-white scrollspy-target">RAM Slots (DIMM)</h4>
+                        <p class="text-secondary">Long slots usually located to the right of the CPU. They have clips at the ends. This is where you stick the memory modules. Most boards have 2 or 4 slots.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-custom rounded border border-secondary border-opacity-25 mb-4">
+                        <h4 id="part-pcie" class="text-white scrollspy-target">PCIe Slots</h4>
+                        <p class="text-secondary">These are for expansion cards. The longest one (x16) is almost always for the Graphics Card. Shorter ones (x1) are for Wi-Fi or Sound cards.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-custom rounded border border-secondary border-opacity-25 mb-4">
+                        <h4 id="part-io" class="text-white scrollspy-target">Rear I/O Panel</h4>
+                        <p class="text-secondary">The back part of the motherboard that sticks out of the case. It contains the USB ports, Ethernet (LAN) jack, and audio jacks.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-custom rounded border border-secondary border-opacity-25 mb-4">
+                        <h4 id="part-chipset" class="text-white scrollspy-target">The Chipset</h4>
+                        <p class="text-secondary">Usually covered by a heatsink (a metal block) in the bottom right corner. It controls the traffic between the CPU and the slower peripherals like USB and SATA.</p>
+                        <div style="height: 150px;"></div> 
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -143,8 +201,41 @@
 
     </div>
 
-    <footer class="py-4 text-center text-secondary" style="border-top: 1px solid #30363d;">
-        <div class="container"><small>PC Anatomy Project | <b>Made by JUFEGAAM</b> | With Bootstrap</small></div>
+    <footer class="py-5 bg-dark-custom" style="border-top: 1px solid #30363d;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-white fw-bold"><span class="text-primary">💻</span> PC Anatomy</h5>
+                    <p class="text-secondary small">
+                        An educational project designed to help students understand the internal components of a personal computer interactively.
+                    </p>
+                    <p class="text-secondary small mb-0">&copy; 2025 JUFEGAAM</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-white">Quick Links</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="index.html#pcMainCarousel" class="nav-link p-0 text-secondary">Gallery</a></li>
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-secondary">About Project</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-white">Tech Stack</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><span class="text-secondary">Bootstrap 5.3</span></li>
+                        <li class="nav-item mb-2"><span class="text-secondary">HTML5 & CSS3</span></li>
+                        <li class="nav-item mb-2"><span class="text-secondary">JavaScript (ES6)</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between pt-4 mt-4 border-top border-secondary border-opacity-25">
+                <p class="text-secondary small mb-0">Designed for Web Applications Subject</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-secondary" href="#"><i class="bi bi-github fs-5"></i></a></li>
+                    <li class="ms-3"><a class="link-secondary" href="#"><i class="bi bi-instagram fs-5"></i></a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

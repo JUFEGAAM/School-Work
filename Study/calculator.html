@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+</head>
+<body>
+
+    <button onclick="iniciarCalculadora()">🧮 Abrir Calculadora</button>
+
+<script>
+    function iniciarCalculadora() {
+        // PASO 1: Pedir números y convertirlos (TRUCO DE EXAMEN: parseFloat)
+        // prompt() siempre devuelve texto. "5" + "5" = "55".
+        // parseFloat() convierte ese "5" en el número 5.
+        let num1 = parseFloat(prompt("Introduce el primer número:"));
+        
+        // PASO 2: Pedir la operación
+        let operacion = prompt("¿Qué quieres hacer? (+, -, *, /)");
+        
+        let num2 = parseFloat(prompt("Introduce el segundo número:"));
+
+        // PASO 3: Calcular (Usamos una variable auxiliar para el resultado)
+        let resultado = 0;
+        let operacionValida = true; // Chivato por si escribe algo raro
+
+        // Usamos SWITCH porque es más limpio para "elegir opciones"
+        // (Aparece en tu PDF "Teoria 4 - Control de Flujo", página 8)
+        switch (operacion) {
+            case "+":
+            case "sumar": // Por si el usuario escribe "sumar"
+                resultado = num1 + num2;
+                break; // IMPORTANTE: El break obliga a salir del switch
+            
+            case "-":
+            case "restar":
+                resultado = num1 - num2;
+                break;
+
+            case "*":
+            case "multiplicar":
+                resultado = num1 * num2;
+                break;
+
+            case "/":
+            case "dividir":
+                resultado = num1 / num2;
+                break;
+
+            default:
+                // Si no escribe ni +, -, * ni /
+                alert("Operación no reconocida");
+                operacionValida = false;
+        }
+
+        // PASO 4: Mostrar resultado solo si todo fue bien
+        if (operacionValida) {
+            alert("El resultado es: " + resultado);
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Practice</title>
+
+<style>
+
+body {
+  background-color: black;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+  <button onClick="calcularEdad()">Que edad tienes?</button>
+  <p>
+  <input type="text" id="tuNombre" onKeyDown="verificarEnter(event)" placeholder="Escribe tu nombre...">
+
+  <p id="text"></p>
+<script>
+
+    function verificarEnter(event) {
+
+        if (event.key === "Enter") {
+            cualEsTuNombre();
+        }
+    }
+
+    function calcularEdad() {
+        let edad = prompt("Introduce tu edad");
+
+        if (edad >= 18) {
+            alert("Eres mayor de edad.");
+      } else {
+            alert("Eres menor de edad.");
+      }
+    }
+
+    function cualEsTuNombre() {
+        let nombre = document.getElementById("tuNombre").value;
+
+        document.getElementById("text").innerHTML = ("Te llamas: " + nombre);
+    }
+
+    function calculadora() {
+      let valor1 = 
+    }
+</script>
+</body>
+</html>
