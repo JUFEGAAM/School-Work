@@ -1,11 +1,93 @@
-<html>
+<html> 
 
-<head>
-  <title>Practice HTML + JavaScript</title>
-</head>
+ <head> 
+   <title>Practice HTML + JavaScript</title> 
 
-<body>
-  <input type="" name="" value="">
-</body>
+ <style> 
+ #title { 
+   margin-bottom: 0px; 
+ } 
 
-</html>
+ #nombre-imagen { 
+   width: 295px; 
+ } 
+ </style> 
+ </head> 
+
+ <body> 
+   <h3 id="title">Animal Name</h3> 
+   <input type="text" id="nombre-imagen" readonly placeholder="Mouse over an image..."> 
+
+   <br><br> 
+
+   <img width="300px" height="200px" 
+   alt="Lion" 
+   onmouseover="document.getElementById('nombre-imagen').value='Lion'" 
+   onmouseout="document.getElementById('nombre-imagen').value=''" 
+   src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-oiVGF-gdhvQ%2FT8ZiQ-KTZ7I%2FAAAAAAAAeW4%2FoATV1UnbTcc%2Fs1600%2FLeon_Imagenes-de-Animales-en-HD.jpg&f=1&nofb=1&ipt=d0be8783f33ba185b9f5305b575479d91d808e9183afaff5b370a8ded80bf91e">
+ 
+
+   <img width="300px" height="200px" 
+   alt="Mammoth" 
+   onmouseover="document.getElementById('nombre-imagen').value='Mammoth'" 
+   onmouseout="document.getElementById('nombre-imagen').value='Mammoth'" 
+   src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgflip.com%2F9g4zyo.jpg&f=1&nofb=1&ipt=8ed4ffc126a037ff7e4ce25456d739a760c10dfe26bacbf3ff43b590670a2fa2">
+ 
+   <br><br>
+
+   <input type="number" id="input-even">
+   <button onclick="checkEven()">Even or Odd</button>
+   <h1 id="result-even"></h1>
+
+   <br><br>
+
+   <input type="number" id="input-prime">
+   <button onclick="checkPrime()">Prime or Not Prime</button>
+   <h1 id="result-prime"></h1>
+
+ <script>
+ function checkEven() {
+   let num = parseInt(document.getElementById('input-even').value);
+   let result = document.getElementById('result-even');
+
+   if (num <= 0 || isNaN(num)) {
+     result.innerHTML = "The number must be greater than 0";
+   } else if (num % 2 === 0) {
+     result.innerHTML = "The number is even";
+   } else {
+     result.innerHTML = "The number is odd";
+   }
+ }
+
+ function checkPrime() {
+   let num = parseInt(document.getElementById('input-prime').value);
+   let result = document.getElementById('result-prime');
+   let isPrime = true;
+
+   if (num <= 0 || isNaN(num)) {
+     result.innerHTML = "The number must be greater than 0";
+     return;
+   }
+
+   if (num === 1) {
+     isPrime = false;
+   } else {
+     for (let i = 2; i < num; i++) {
+       if (num % i === 0) {
+         isPrime = false;
+         break;
+       }
+     }
+   }
+
+   if (isPrime) {
+     result.innerHTML = "The number is prime";
+   } else {
+     result.innerHTML = "The number is not prime";
+   }
+ }
+ </script>
+
+ </body> 
+
+ </html>
