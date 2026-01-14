@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Exercice 6 - Arrays, lists and maps</title>
+</head>
+<body>
+    <h1 align="center">Exercice 6 - Arrays, lists and maps</h1>
+<script>
+  function runExercises() {
+    let fruits = ["apple", "pear", "grape"];
+    alert("1) The array is: " + fruits + " | Length: " + fruits.length);
+
+    let newFruit = prompt("2) Enter a fruit to add to the array:");
+    fruits.push(newFruit);
+    alert("Updated array: " + fruits);
+
+    let searchItem = prompt("3) Enter a fruit to search for in the array:");
+    if (fruits.includes(searchItem)) {
+      alert("The fruit IS in the list");
+    } else {
+      alert("The fruit is NOT in the list");
+    }
+
+    let removedItem = fruits.shift();
+    alert("4) First element removed: " + removedItem + "\nCurrent array: " + fruits);
+
+    let listMessage = "5) Array elements:\n";
+    for (let i = 0; i < fruits.length; i++) {
+      listMessage += (i + 1) + ") " + fruits[i] + "\n";
+    }
+    alert(listMessage);
+
+    let person = { name: "Ana", age: 25, city: "Madrid" };
+    alert("6) Person map keys: " + Object.keys(person));
+
+    alert("7) Person map values: " + Object.values(person));
+
+    let newKey = prompt("8) Enter a new key for person (e.g., car):");
+    let newValue = prompt("Enter a value for that key (e.g., Toyota):");
+    person[newKey] = newValue;
+    alert("Updated map:\n" + JSON.stringify(person));
+
+    let numbers = [3, 23, 13, 67, 40];
+    let maxNumber = Math.max(...numbers);
+    alert("9) Numbers: " + numbers + "\nThe largest is: " + maxNumber);
+
+    let products = { bread: 0.50, milk: 0.95, rice: 1.20 };
+    let productQuery = prompt("10) Enter a product (bread, milk, rice):");
+    let price = products[productQuery.toLowerCase()];
+    
+    if (price) {
+      alert("The price of " + productQuery + " is " + price + " €");
+    } else {
+      alert("Product not found");
+    }
+  }
+  runExercises();
+</script>
+</body>
+</html>

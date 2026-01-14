@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object Exercises</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        button { display: block; margin: 10px 0; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Objects Assignment</h1>
+    
+    <button onclick="runExercise1()">1. Create Object</button>
+    <button onclick="runExercise2()">2. Add Property</button>
+    <button onclick="runExercise3()">3. Object Method</button>
+    <button onclick="runExercise4()">4. Loop Properties</button>
+    <button onclick="runExercise5()">5. Nested Objects (Car)</button>
+    <button onclick="runCalculator()">6. Calculator Test</button>
+
+    <script>
+        // --- GLOBAL OBJECT FOR EXERCISES 1-4 ---
+        // Requirement: Create an object named 'person' [cite: 18]
+        // Changed to Jordi Wild as requested.
+        let person = {
+            name: "Jordi Wild",
+            age: 40,
+            profession: "Youtuber / Podcaster"
+        };
+
+        // --- EXERCISE 1: Simple Object ---
+        function runExercise1() {
+            // Requirement: Show each property with an alert [cite: 18]
+            alert("Name: " + person.name);
+            alert("Age: " + person.age);
+            alert("Profession: " + person.profession);
+        }
+
+        // --- EXERCISE 2: Add Properties ---
+        function runExercise2() {
+            // Requirement: Add 'country' property and show it 
+            // Changed country from Spain/Argentina to Japan (since Jordi likes it)
+            person.country = "Japan"; 
+            alert("Country added: " + person.country);
+        }
+
+        // --- EXERCISE 3: Methods ---
+        function runExercise3() {
+            // Requirement: Add a 'greet' method returning a specific string [cite: 21]
+            // Defined dynamically here to follow the exercise flow
+            person.greet = function() {
+                return "Hi, I'm " + this.name + " and I am " + this.age + " years old.";
+            };
+            
+            // Execute the method
+            alert(person.greet());
+        }
+
+        // --- EXERCISE 4: Iterate Properties ---
+        function runExercise4() {
+            // Requirement: Use for...in loop to show values [cite: 22, 124]
+            let output = "";
+            for (let key in person) {
+                // Determine if the property is a function (method) to format output cleanly
+                if (typeof person[key] !== 'function') {
+                    alert("Property '" + key + "' is: " + person[key]);
+                }
+            }
+        }
+
+        // --- EXERCISE 5: Objects inside Objects ---
+        function runExercise5() {
+            // Requirement: Object 'car' with internal object 'engine' [cite: 23, 100]
+            // Changed to Ford Shelby GT500 Classic
+            let car = {
+                brand: "Ford",
+                model: "Shelby GT500 Classic",
+                engine: {
+                    type: "V8 Cobra Jet",
+                    horsepower: 335
+                }
+            };
+
+            // Requirement: Show the engine type [cite: 24]
+            alert("Engine Type: " + car.engine.type + " with " + car.engine.horsepower + " HP");
+        }
+
+        // --- EXERCISE 6: Calculator Class ---
+        // Requirement: Calculator object with operands, methods, and constructor [cite: 26, 28, 142]
+        // Using Class syntax (ES6) to look different from your friend's factory function.
+        class Calculator {
+            constructor(op1, op2) {
+                this.operand1 = op1;
+                this.operand2 = op2;
+            }
+
+            add() {
+                return this.operand1 + this.operand2;
+            }
+
+            subtract() {
+                return this.operand1 - this.operand2;
+            }
+
+            multiply() {
+                return this.operand1 * this.operand2;
+            }
+
+            divide() {
+                if (this.operand2 === 0) return "Error: Cannot divide by zero.";
+                return this.operand1 / this.operand2;
+            }
+        }
+
+        function runCalculator() {
+            // Requirement: Prompt user for operands and operation [cite: 29]
+            let input1 = prompt("Enter the first number:");
+            let input2 = prompt("Enter the second number:");
+            
+            // Validation to ensure they are numbers
+            let number1 = parseFloat(input1);
+            let number2 = parseFloat(input2);
+
+            if (isNaN(number1) || isNaN(number2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            // Create the object instance using the Constructor
+            let myCalc = new Calculator(number1, number2);
+
+            let operation = prompt("What operation? (add, subtract, multiply, divide)");
+
+            // Cleaning the input to be lowercase to avoid errors
+            if (operation) {
+                operation = operation.toLowerCase().trim();
+            }
+
+            let result;
+
+            switch (operation) {
+                case "add":
+                case "+": // Added symbol support just in case
+                    result = myCalc.add();
+                    break;
+                case "subtract":
+                case "-":
+                    result = myCalc.subtract();
+                    break;
+                case "multiply":
+                case "*":
+                    result = myCalc.multiply();
+                    break;
+                case "divide":
+                case "/":
+                    result = myCalc.divide();
+                    break;
+                default:
+                    result = "Invalid operation selected.";
+            }
+
+            alert("The result is: " + result);
+        }
+    </script>
+</body>
+</html>

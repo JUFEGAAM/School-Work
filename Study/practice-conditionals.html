@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>Calculadora Examen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-6"> <input type="number" class="form-control mb-3" placeholder="Calculadora lista..." disabled>
+        
+        <button class="btn btn-primary w-100" onClick="calculator()">Ejecutar Calculadora</button>
+        
+        <h1 id="textoResultado" class="mt-4 text-success"></h1>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function calculator() {
+
+    // 1. Pedimos los datos y convertimos a Entero
+    // OJO: Si necesitas decimales, usa parseFloat() en lugar de parseInt()
+    let numero1 = parseInt(prompt("Introduce el primer número:"));
+    let numero2 = parseInt(prompt("Introduce el segundo número:"));
+
+    // 2. Pedimos la operación (Esto es Texto, no lleva parseInt)
+    let operacion = prompt("¿Qué operación quieres? Escribe: +, -, * o /");
+
+    // Variable para guardar el total
+    let total = 0;
+
+    // 3. Validación: Si no ha metido números, paramos
+    if (isNaN(numero1) || isNaN(numero2)) {
+        alert("Error: Tienes que introducir números válidos.");
+        return; // El return hace que la función se pare aquí
+    }
+
+    // 4. Lógica de Condicionales (ELSE IF es la clave aquí)
+    if (operacion == "+") {
+        total = numero1 + numero2;
+    } 
+    else if (operacion == "-") {
+        total = numero1 - numero2;
+    } 
+    else if (operacion == "*") {
+        total = numero1 * numero2;
+    } 
+    else if (operacion == "/") {
+        // Un extra pro: evitar dividir por 0
+        if (numero2 == 0) {
+            alert("No se puede dividir por cero");
+            return;
+        }
+        total = numero1 / numero2;
+    } 
+    else {
+        alert("Operación desconocida. Por favor usa +, -, * o /");
+        return;
+    }
+
+    // 5. Mostrar el resultado en el HTML
+    // Buscamos el H1 por su ID y le cambiamos el texto
+    document.getElementById("textoResultado").innerHTML = "El resultado es: " + total;
+}
+</script>
+</body>
+</html>

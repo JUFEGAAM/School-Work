@@ -1,0 +1,65 @@
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      
+      <label class="form-label">Introduce tu edad:</label>
+      <input type="number" id="miEdad" class="form-control mb-3">
+
+      <button class="btn btn-primary w-100" onclick="validarEdad()">Comprobar Edad</button>
+
+      <div class="mt-4 p-3 bg-warning text-dark" 
+           onmouseover="mostrarAyuda()" 
+           onmouseout="ocultarAyuda()">
+           Pasa el ratón por aquí (Zona Sorpresa)
+           <p id="textoSorpresa"></p>
+      </div>
+
+      <h1 id="salidaTexto" class="mt-3 text-success"></h1>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Función principal del botón
+  function validarEdad() {
+      // PASO 1: Coger el valor del input (No usamos prompt)
+      let dato = document.getElementById("miEdad").value;
+      
+      // PASO 2: Convertir a número (Siempre con parseInt para mates)
+      let edad = parseInt(dato);
+
+      // PASO 3: Lógica
+      let mensaje = "";
+      
+      if (isNaN(edad)) {
+          mensaje = "¡Error! Escribe un número.";
+      } else if (edad >= 18) {
+          mensaje = "Eres mayor de edad. Puedes pasar.";
+      } else {
+          mensaje = "Eres menor. A estudiar.";
+      }
+
+      // PASO 4: Mostrar en el H1 (No usamos alert)
+      document.getElementById("salidaTexto").innerHTML = mensaje;
+  }
+
+  // Funciones para el ratón (MouseOver / MouseOut)
+  function mostrarAyuda() {
+      document.getElementById("textoSorpresa").innerHTML = "¡Hola! Soy un evento de ratón.";
+  }
+
+  function ocultarAyuda() {
+      document.getElementById("textoSorpresa").innerHTML = ""; // Lo borramos
+  }
+</script>
+
+</body>
+</html>

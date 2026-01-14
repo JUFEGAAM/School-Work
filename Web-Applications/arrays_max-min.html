@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Arrays: Max and Min</title>
+</head>
+<body>
+
+<script>
+    let arrayNumbers = [];
+      for (let i = 0; i < 100; i++) {
+        arrayNumbers.push(Math.floor(Math.random() * 1000));
+      }
+    console.log(arrayNumbers);
+
+    let max = arrayNumbers[0];
+    let min = arrayNumbers[0];
+
+    for (let i = 0; i < arrayNumbers.length; i++) {
+
+      if (arrayNumbers[i] > max) {
+        max = arrayNumbers[i];
+      }
+      if (arrayNumbers[i] < min) {
+        min = arrayNumbers[i];
+      }
+    }
+    alert("The Max Number is: " + max + "\nThe Min number is: " + min);
+</script>
+</body>
+</html>

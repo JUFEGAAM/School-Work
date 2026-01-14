@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Javascript Task</title>
+    <script>
+        let arr = [];
+        for (let i = 0; i <= 10; i++) {
+            arr.push(i);
+            if (i == 10) {
+                alert("Numbers: " + arr);
+            }
+        }
+
+        let total = 0;
+        for (let i = 0; i <= 100; i++) {
+            total += i;
+        }
+        alert("The total sum is: " + total);
+
+        let evenCount = 0;
+        let oddCount = 0;
+        for (let i = 1; i <= 50; i++) {
+            if (i % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+        alert("From 1 to 50 there are:\nEvens: " + evenCount + "\nOdds: " + oddCount);
+
+        let num = +prompt("Enter a number for the table:");
+        let table = "";
+        for (let i = 1; i <= 10; i++) {
+            table += num + " x " + i + " = " + (num * i) + "\n";
+        }
+        alert("Table of " + num + ":\n" + table);
+
+        let text = prompt("Enter a word:");
+        let letters = "";
+        for (let i = 0; i < text.length; i++) {
+            letters += text[i] + "\n";
+        }
+        alert(letters);
+
+        let phrase = prompt("Enter a word to count vowels:");
+        let vowels = ["a", "e", "i", "o", "u"];
+        let count = 0;
+        for (let i = 0; i < phrase.length; i++) {
+            if (vowels.includes(phrase[i].toLowerCase())) {
+                count++;
+            }
+        }
+        alert("Vowels found: " + count);
+    </script>
+</head>
+<body>
+</body>
+</html>
