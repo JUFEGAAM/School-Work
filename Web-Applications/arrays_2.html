@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Arrays 2</title>
+</head>
+<body>
+<center>
+<h3>Introduce a number to find how much times it appears in the array</h3>
+<input type="number" id="findNumber" placeholder="Introduce your number...">
+<p></p>
+<button onclick="findNumber()">Search in the array</button>
+</center>
+<script>
+  let arrayNumeros = [];
+    for (let i = 0; i < 100; i++) {
+      arrayNumeros.push(Math.floor(Math.random() * 1000));
+}        
+    console.log(arrayNumeros);
+  function getAverage() {
+    let addition = 0;
+    for (let i = 0; i < arrayNumeros.length; i++) {
+      addition += arrayNumeros[i];
+    }
+    let average = addition / arrayNumeros.length;
+
+    console.log("The average is: " + average);
+}
+  function evenAndOdd() {
+    let evens = 0;
+    let odds = 0;
+    for (i = 0; i < arrayNumeros.length; i++) {
+      if (arrayNumeros[i] % 2 === 0) {
+        evens++;
+      } else {
+        odds++;
+      }
+    }
+    console.log("There is: " + evens + " even numbers.")
+    console.log("There is: " + odds + " odd numbers.")
+  }
+getAverage();
+evenAndOdd();
+</script>
+</body>
+</html>
