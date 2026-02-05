@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>Practica Arrays</title>
+    </head>
+    <body>
+        <h3>Extras</h3>
+        <p>.length: Cuenta cuántos elementos hay dentro del array</p>
+        <p>.join(","): Toma todos los elementos del array y los une en un solo texto, separados por una coma</p>
+        <p>.push(): Agrega un nuevo elemento al final del array</p>
+        <p>.unshift(): Agrega un nuevo elemento al principio del array</p>
+        <p>.includes(): Revisa cada elemento del array</p>
+        <p>.shift(): Elimina el primer elemento del array</p>
+        <p>.pop(): Elimina el ultimo elemento del array</p>
+        <p>+=: Agrega texto nuevo al final de lo que ya tenías guardado</p>
+        <p>/n: Salto de linea</p>
+        <p>Math.max(...): Lee los numeros del array con los 3 puntos, sin ellos no funciona</p>
+
+        <button onclick="ejercicio1()">Ejercicio 1</button>
+        <button onclick="ejercicio2()">Ejercicio 2</button>
+        <button onclick="ejercicio3()">Ejercicio 3</button>
+        <button onclick="ejercicio4()">Ejercicio 4</button>
+        <button onclick="ejercicio5()">Ejercicio 5</button>
+        <button onclick="ejercicio6()">Ejercicio 6</button>
+        <button onclick="ejercicio7()">Ejercicio 7</button>
+        <button onclick="ejercicio8()">Ejercicio 8</button>
+        <button onclick="ejercicio9()">Ejercicio 9</button>
+    </body>
+    <script>
+        //El array frutas esta dentro del script, es decir que se puede usar con todas las funciones.
+        //El mapa creado tambien esta dentro del scrip, es decir que se puede usar con todas las funciones
+        let frutas = ["manzana", "pera", "uva"]
+
+        let personas = new Map();
+        personas.set("nombre", "ana")
+        personas.set("edad", "25")
+        personas.set("ciudad", "madrid")
+
+        let numeros = [4, 10, 2, 99, 23];
+        
+        let productos = new Map();
+        productos.set('pan', 1.10);
+        productos.set('leche', 0.95);
+        productos.set('arroz', 1.50);
+
+
+        function ejercicio1() {
+            let largo = frutas.length
+            alert("El array es: " + frutas.join(", ") + " | Longitud: " + largo)
+        }
+
+        function ejercicio2() {
+            let nuevo = prompt("Agrega una nueva fruta al array")
+            frutas.push(nuevo)
+            alert("Array actualizado: " + frutas.join(", "))
+        }
+
+        function ejercicio3() {
+            let buscar = prompt("Introduce una fruta para saber si esta en el array")
+            if (frutas.includes(buscar)) {alert("La fruta SI esta en el array")}
+            else {alert("La fruta NO esta en el array")}
+        }
+
+        function ejercicio4() {
+            let eliminar = frutas.shift()
+            alert("Se elimino el primer elemento (" + eliminar + ") | Array actual: " + frutas.join(", "))
+        }
+
+        function ejercicio5() {
+            let mensaje = "Elementos del array: "
+            for (let i = 0; i < frutas.length; i++) {
+                mensaje += frutas[i] + ", ";
+            }
+            alert(mensaje)
+        }
+
+        function ejercicio6() {
+            let claves = Array.from(personas.keys(","))
+            alert ("Las claves del mapa persona son: " + claves)
+        }
+
+        function ejercicio7() {
+            alert("Valores del mapa persona: " + personas.get("nombre") + "," + personas.get("edad") + "," + personas.get("ciudad"))
+        }
+
+        function ejercicio8() {
+            let clave = prompt("Escribe una nueva clave para personas")
+            let valor = prompt("Escribe un valor para esa clave")
+
+            personas.set(clave, valor)
+
+            let objetoAgregado = Object.fromEntries(personas);
+
+            alert("Mapa actualizado:\n" + JSON.stringify(objetoAgregado));
+        }
+
+        function ejercicio9() {
+            let max = numeros[0]
+            let min = numeros[0]
+
+            for (let i=0; i < numeros.length; i++) {
+                if (max < numeros[i]) {max = numeros[i]}
+                if (min > numeros[i]) {min = numeros[i]}
+            }
+            alert("Maximo: " + max + " Minimo: " + min)  
+        }
+
+        function nuevoMapa() {
+            let entrada = prompt("Ingresa un producto (pan, leche, arroz):");
+            let producto = entrada.toLowerCase();
+
+            if (productos.has(producto)) {
+                let precio = productos.get(producto);
+                alert(`El precio de ${producto} es ${precio} €`);
+            } else {
+                alert("Producto no encontrado.");
+            }
+        }
+    </script>
+</html>

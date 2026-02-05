@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Examen</title>
+    </head>
+    <body>
+        <script>
+            let filaA = ["Agua", "Barco", "Barco", "Agua"];
+            let filaB = ["Agua", "Agua", "Agua", "Barco"];
+            let filaC = ["Agua", "Agua", "Agua", "Barco"];
+            let filaD = ["Agua", "Agua", "Agua", "Barco"];
+
+            function disparo(contenido) {
+                if (contenido === "Barco") {
+                    return ("True");
+                } else {
+                    return ("False");
+                }
+            }
+
+            let resultado = disparo(filaC[2]);
+            alert("Usando variables: "+resultado);
+
+            let mapaJuego = {
+                A: ["Agua", "Barco", "Barco", "Agua"],
+                B: ["Agua", "Agua", "Agua", "Barco"],
+                C: ["Agua", "Agua", "Agua", "Barco"],
+                D: ["Agua", "Agua", "Agua", "Barco"]
+            };
+
+            alert("Usando el mapa: "+disparo(mapaJuego.C[2]))
+        </script>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercises 7.2 While</title>
+</head>
+<body>
+    <script>
+        // 2.1 Count backwards
+        let count1 = 10;
+        let result1 = "";
+        while (count1 >= 1) {
+            result1 += count1 + " ";
+            count1--;
+        }
+        alert("2.1 Count backwards:\n\n" + result1);
+
+        // 2.2 Sum limit 100
+        let sum2 = 0;
+        let numberCount = 0;
+        while (sum2 <= 100) {
+            let entry = prompt("2.2 Enter a number (current sum is " + sum2 + "):");
+            let number = parseFloat(entry);
+            if (isNaN(number)) {
+                alert("You must enter a valid number.");
+            } else {
+                sum2 += number;
+                numberCount++;
+            }
+        }
+        alert("The sum exceeded 100!\nYou entered " + numberCount + " numbers.");
+
+        // 2.3 Guess number
+        const key = Math.floor(Math.random() * 10) + 1;
+        let guess = prompt("2.3 Guess the number (between 1 and 10):");
+        while (parseInt(guess) !== key) {
+            guess = prompt("Incorrect. Try again (between 1 and 10):");
+        }
+        alert("Correct! The secret number was " + key + ".");
+
+        // 2.4 Password
+        let pass = prompt("2.4 Enter the password:");
+        while (pass !== "1234") {
+            pass = prompt("Wrong password. Try again:");
+        }
+        alert("Correct password!");
+
+        // 2.5 Sum until 0
+        let sum5 = 0;
+        let n5 = prompt("2.5 Enter a number (0 to finish):");
+        while (n5 !== "0") {
+            sum5 += parseFloat(n5); 
+            n5 = prompt("Enter another number (0 to finish):");
+        }
+        alert("The total sum is: " + sum5);
+
+        // 2.6 Countdown
+        let count6 = 5;
+        let text6 = "2.6 Launch countdown:\n\n";
+        while (count6 >= 1) {
+            text6 += count6 + "\n";
+            console.log(count6);
+            count6--;
+        }
+        text6 += " Lift off!";
+        alert(text6);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body>
+
+<script>
+  let frutas = ["manzana", "pera", "uva"];
+  alert("El array es: " + frutas + " | Longitud: " + frutas.length);
+
+  let addfrutas = prompt("Ingresa una fruta para anyadirla al array:");
+  frutas.push(addfrutas);
+  alert("El array se ha actualizado: " + frutas);
+
+  let searchFrutas = prompt("Escribe la fruta que quieras buscar en el array: ");
+  if (frutas.includes(searchFrutas)) {
+    alert("La fruta SI esta en el array");
+  } else {
+    alert("La fruta NO esta en el array");
+  }
+
+  frutas.shift();
+  alert("Se elimino el primer elemento del array: " + frutas);
+
+  let mensaje = "Elementos del array: "
+  for(let i = 0; i < frutas.length; i++) {
+    mensaje += "\n" + (i + 1) + ") " + frutas[i];
+  }
+  alert(mensaje);
+</script>
+</body>
+</html>

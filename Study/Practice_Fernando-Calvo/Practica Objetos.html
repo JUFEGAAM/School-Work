@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Practica Objetos</title>
+    </head>
+    <body>
+        <button onclick="ejercicio1()">Ejercicio1</button>
+        <button onclick="ejercicio2()">Ejercicio2</button>
+        <button onclick="ejercicio3()">Ejercicio3</button>
+        <button onclick="ejercicio4()">Ejercicio4</button>
+        <button onclick="ejercicio5()">Ejercicio5</button>
+        <script>
+            let persona = {
+                nombre: "Xavier",
+                edad: "17",
+                profesion: "SMX",
+                saludar: function() {
+                    alert("Hola soy " + this.nombre + " y tengo " + this.edad + " años")
+                }
+            }
+
+            function ejercicio1() {
+                alert("Nombre: "+persona.nombre)
+                alert("Edad: "+persona.edad)
+                alert("Profesion: "+persona.profesion)
+            }
+
+            function ejercicio2() {
+                persona.pais = "Venezuela"
+                alert("Pais: " + persona.pais)
+            }
+
+            function ejercicio3() {
+                persona.saludar()
+            }
+
+            function ejercicio4() {
+                for (let propiedad in persona) {
+                    alert(propiedad + ": " + persona[propiedad])
+                }
+            }
+
+            let coche = {
+                marca: "Pene",
+                modelo: "Negro",
+                motor: {
+                    tipo: "XD",
+                    caballos: "123"
+                }
+            }
+
+            function ejercicio5() {
+                alert(coche.motor.tipo)
+            }
+
+            let calculadora = {
+                operando1: 0,
+                operando2: 0,
+
+                sumar: function() {
+                    return this.operando1 + this.operando2
+                },
+                restar: function() {
+                    return this.operando1 - this.operando2
+                },
+                multiplicar: function() {
+                    return this.operando1 * this.operando2
+                },
+                dividir: function() {
+                    return this.operando1 / this.operando2
+                }
+            }
+
+            function ejercicio6() {
+                calculadora.operando1 = parseFloat(prompt("Introduce un numero"))
+                calculadora.operando2 = parseFloat(prompt("Introduce otro numero"))
+                let operacion = prompt("Que quieres hacer? sumar, restar, multiplicar o dividir")
+                let resultado = 0
+
+                if (operacion === "sumar") {resultado = calculadora.sumar()}
+                if (operacion === "restar") {resultado = calculadora.restar()}
+                if (operacion === "multiplicar") {resultado = calculadora.multiplicar()}
+                if (operacion === "dividir") {resultado = calculadora.dividir()}
+
+                alert(resultado)
+            }
+        </script>
+    </body>
+</html>

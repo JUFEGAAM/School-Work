@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Bucles WHILE</title>
+    </head>
+    <body>
+        <button onclick="ejercicio1()">Ejercicio 1</button>
+        <button onclick="ejercicio2()">Ejercicio 2</button>
+        <button onclick="ejercicio5()">Ejercicio 5</button>
+        <button onclick="factorial()">Factorial</button>
+    </body>
+    <script>
+
+        const clave= Math.floor(Math.random() * 10) + 1;
+
+        function ejercicio1() {
+            let numero = 10
+            let mensaje = "Contar hacia atras:\n"
+            while (numero >=1) {
+                mensaje += numero + " ";
+                numero--;
+            }
+            alert(mensaje)
+        }
+
+        function ejercicio2() {
+            let contador = 0
+            let suma = 0
+
+            while (suma <= 100) {
+                let numero = parseFloat(prompt("Introduce un numero (suma actual es " + suma + "):\n"))
+                suma += numero
+                contador++
+            }
+            alert("La suma supero 100\nHas introducido " + contador + " numero(s)")
+        }
+
+            function ejercicio5() {
+                let valor = 0
+                let suma = 0
+                let numero = parseFloat(prompt("Introduce un numero (0 para terminar)"))
+                while (numero !== valor) {
+                    suma += numero
+                    numero = parseFloat(prompt("Introduce otro numero (0 para terminar)"))
+                }
+                alert("La suma total es " + suma)
+            }
+
+            function factorial() {
+                let numero = parseInt(prompt("Ingresa un numero para calcular su factorial"))
+                
+                function calculo(n) {
+                    if(n <= 1) {return 1}
+                    else {return n * calculo(n-1)}
+                }
+                let resultado = calculo(numero)
+                alert(resultado)
+            }
+    </script>
+</html>

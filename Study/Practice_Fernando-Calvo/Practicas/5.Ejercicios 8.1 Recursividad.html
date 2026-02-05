@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicios de Recursividad</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .contenedor {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            width: 640px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            flex: 1;
+        }
+
+        button {
+            padding: 10px 16px;
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #005ea8;
+        }
+
+        .resultado {
+            width: 100%;
+            min-height: 60px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 8px;
+            background-color: #f8fafc;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            margin-top: 6px;
+        }
+
+        .nota {
+            font-size: 13px;
+            color: #444;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios de Recursividad</h1>
+    <div class="contenedor">
+        <div class="row">
+            <div style="flex:1">
+                <label for="numero">Introduce un número N:</label>
+                <input type="number" id="numero" min="0" placeholder="Ejemplo: 5">
+            </div>
+            <div style="flex:1">
+                <label for="texto">Introduce un texto:</label>
+                <input type="text" id="texto" placeholder="Ejemplo: Recursión">
+            </div>
+        </div>
+        <button id="generar">Generar</button>
+        <label>Ejercicio 1: Suma de 1 a N (recursivo)</label>
+        <div id="resultado1" class="resultado"></div>
+        <label>Ejercicio 2: Cadena al revés (recursivo)</label>
+        <div id="resultado2" class="resultado"></div>
+        <label>Ejercicio 3: Contar caracteres de la cadena</label>
+        <div id="resultado3" class="resultado"></div>
+        <label>Ejercicio 4: Fibonacci recursivo (para N)</label>
+        <div id="resultado4" class="resultado"></div>
+        <div class="nota">
+            <strong>Notas:</strong> El número se usa en los ejercicios 1 y 4.
+            El texto se usa en los ejercicios 2 y 3.
+        </div>
+    </div>
+    <script>
+        document.getElementById("generar").addEventListener("click", function() {
+            ejercicio1(); ejercicio2(); ejercicio3(); ejercicio4();
+        });
+
+        function ejercicio1() {
+            let input = document.getElementById("numero");
+            let valor = parseInt(input.value);
+
+            function sumaRecursiva(num) {
+                if (num === 1) return 1;
+                return num + sumaRecursiva(num - 1);
+            }
+            
+            function cadenaRecursiva(num) {
+                if (num === 1) return "1";
+                return cadenaRecursiva(num - 1) + "+" + num;
+            }
+
+            let total = sumaRecursiva(valor);
+            let texto = cadenaRecursiva(valor);
+
+            let salida = document.getElementById("resultado1");
+            salida.innerText = texto + " = " + total;
+        }
+
+        function ejercicio2() {
+            let texto = document.getElementById("texto").value;
+            
+            function invertir(cadena) {
+                if (cadena === "") return "";
+                return invertir(cadena.slice(1)) + cadena[0]
+            }
+
+            let resultado = invertir(texto)
+            
+            let salida = document.getElementById("resultado2")
+            salida.innerText = "Original: " + texto + " Invertido: " + resultado
+        }
+
+        function ejercicio3() {
+            let texto = document.getElementById("texto").value;
+
+            function contarCaracteres(caracteres) {
+                if (caracteres === "") return 0;
+                return 1 + contarCaracteres(caracteres.slice(1))
+            }
+
+            let resultado = contarCaracteres(texto)
+
+            let salida = document.getElementById("resultado3")
+            salida.innerText = "La cadena " + texto + " tiene " + resultado + " caracter(es)"
+        }
+
+        function ejercicio4() {
+            let numero = document.getElementById("numero");
+            let valor = parseInt(numero.value);
+
+            function fibonacci(n) {
+                if (n < 2) return n;
+                return fibonacci(n-1) + fibonacci(n-2)
+            }
+
+            let resultado = fibonacci(valor)
+
+            let salida = document.getElementById("resultado4")
+            salida.innerText = "Fibonnaci (" + valor + ") = " + resultado
+        }
+    </script>
+</body>
+</html>

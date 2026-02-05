@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Do While Exercises</title>
+</head>
+<body>
+    <script>
+      
+        let namesCount = 0;
+        let name;
+        do {
+            name = prompt("3.1 Enter a name (type cancel to finish):");
+            if (name != "cancel") namesCount++;
+        } while (name != "cancel");
+        alert("You entered " + namesCount + " name(s)."); 
+
+        
+        let option;
+        do {
+            option = prompt("3.2 MENU\n1. Greet\n2. Date\n3. Exit");
+            if (option == "1") alert("Hello!"); 
+            if (option == "2") alert("Date: " + new Date()); 
+        } while (option != "3"); 
+
+       
+        let evens = 0;
+        let n3;
+        do {
+            n3 = prompt("3.3 Number 0 to finish:");
+            if (n3 != 0 && n3 % 2 == 0) evens++;
+        } while (n3 != 0);
+        alert("Evens: " + evens); 
+
+        
+        let sum4 = 0;
+        let qty4 = 0;
+        do {
+            let n4 = prompt("3.4 Number current sum: " + sum4 + ":"); 
+            sum4 += parseFloat(n4);
+            qty4++;
+        } while (sum4 <= 50); 
+        alert("Sum: " + sum4 + " in " + qty4 + " numbers."); 
+
+        
+        let rep;
+        do {
+            rep = prompt("3.5 Repeat? (Y/N):"); 
+        } while (rep == "Y"); 
+        alert("Program finished."); 
+
+      
+        let s6 = 0;
+        let c6 = 0;
+        let n6;
+        do {
+            n6 = prompt("3.6 Grade negative to finish:"); 
+            if (n6 >= 0) {
+                s6 += parseFloat(n6);
+                c6++;
+            }
+        } while (n6 >= 0);
+        alert("Average: " + (s6 / c6)); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Bucles FOR</title>
+    </head>
+    <body>
+        <button onclick="ejercicio1()">Ejercicio 1</button>
+        <button onclick="ejercicio2()">Ejercicio 2</button>
+        <button onclick="ejercicio3()">Ejercicio 3</button>
+        <button onclick="ejercicio4()">Ejercicio 4</button>
+        <button onclick="ejercicio5()">Ejercicio 5</button>
+        <button onclick="ejercicio6()">Ejercicio 6</button>
+    </body>
+    <script>
+        function ejercicio1() {
+            let numeros = "";
+            for (let i = 1; i <= 10; i++) {
+                numeros += i + " "
+            }
+            alert(numeros)
+        }
+
+        function ejercicio2() {
+            let mensaje = "La suma de los numeros del 1 al 100 es: " + "\n"
+            let numeros = 0
+
+            for (let i = 0; i <= 100; i++) {
+                numeros += i
+            }
+            alert(mensaje + numeros)
+        }
+
+        function ejercicio3() {
+            let numero = parseFloat(prompt("Introduce un numero para ver su tabla de multiplicar"))
+            let mensaje = "Tabla del " + numero + ":\n"
+
+            for(let i=1; i <= 10; i++) {
+                mensaje += numero + " x " + i + " = " + (numero * i) + "\n"
+            }
+            alert(mensaje)
+        }
+
+        function ejercicio4() {
+            let par = 0
+            let impar = 0
+            let mensaje = "Entre 1 y 50 hay:\n"
+
+            for (let i = 1; i <= 50; i++) {
+                if (i %2 == 0) {par++}
+                else {impar++}
+            }
+            alert(mensaje + par + " numeros pares\n" + impar + " numeros impares")
+        }
+
+        function ejercicio5() {
+            let palabra = prompt("Escribe una palabra para mostrar sus letras")
+            let mensaje = "Letras de la palabra '" + palabra + "':\n" 
+            
+            for (let i = 0; i < palabra.length; i++) {
+                mensaje += palabra[i] + "\n"
+            }
+            alert(mensaje)
+        }
+
+        function ejercicio6() {
+            let frase = prompt("Escribe una frase para contar las vocales")
+            let vocales = "aeiouAEIOU"
+            let contador = 0
+
+            for (let i = 0; i < frase.length; i++) {
+                if (vocales.includes(frase[i])) {contador++}
+            }
+            alert("La frase '" + frase + "' tiene " + contador + " vocal(es)")
+        }
+    </script>
+</html>

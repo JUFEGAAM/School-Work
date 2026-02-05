@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Examen</title>
+    </head>
+    <body>
+        <script>
+            class Autobus {
+                constructor(capacidad, pasajeros, conductor) {
+                    this.capacidad = capacidad
+                    this.pasajeros = pasajeros
+                    this.conductor = conductor
+                }
+
+                subir(numPasajeros) {
+                    if (this.pasajeros + numPasajeros > this.capacidad) {
+                        alert("Error: El autobus excede su capacidad maxima")
+                    } else {
+                        this.pasajeros += numPasajeros
+                    }
+                }
+
+                bajar(numPasajeros) {
+                    if (this.pasajeros - numPasajeros < 0) {
+                        alert("Error: no puede bajar mas pasajeros de los que hay")
+                    } else {
+                        this.pasajeros -= numPasajeros
+                    }
+                }
+            }
+
+            let miBus = new Autobus(40, 10, "Juan")
+            miBus.turno = "Noche"
+            
+            function examen3() {
+                alert("Capacidad: " + miBus.capacidad)
+                alert("Pasajeros: " + miBus.pasajeros)
+                alert("Conductor: " + miBus.conductor)
+                alert("Turno: " + miBus.turno)
+            }  
+        </script>  
+    </body>
+</html>
