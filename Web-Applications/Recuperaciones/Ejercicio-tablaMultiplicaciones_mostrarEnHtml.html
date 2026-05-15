@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <title>Ejercicio - Tabla Multiplicaciones</title>
+</head>
+
+<body>
+  <center>
+    <input type="number" id="number">
+    <p></p>
+    <button style="width: 200px; height: 75px; font-size: 30px;" onclick="tablaMultiplicaciones()">Send</button>
+  </center>
+  <script>
+    function tablaMultiplicaciones() {
+      let number = document.getElementById("number").value;
+      let resultado = [];
+
+      for (let i = 0; i <= 10; i++) {
+        let calculo = number * i;
+        resultado.push(number + " x " + i + " = " + calculo);
+      }
+      alert(resultado.join("\n"));
+    }
+  </script>
+</body>
+
+</html>

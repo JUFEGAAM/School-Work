@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Exercice 11 - Last Exam</title>
+</head>
+
+<body>
+  <input id="number" type="number">
+  <button onclick="valueArray()">Create Array</button>
+
+  <script>
+
+    function valueArray() {
+      let value = parseInt(document.getElementById("number").value);
+      let result = [];
+
+      for (let i = 1; i <= value; i++) {
+        if (value % i === 0) {
+          result.push(i);
+        }
+
+      }
+      alert("The array of: " + value + " is: " + result);
+    }
+  </script>
+</body>
+
+</html>
